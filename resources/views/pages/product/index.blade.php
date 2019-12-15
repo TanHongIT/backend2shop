@@ -5,7 +5,7 @@
 
 <div class="album py-5 bg-light">
     <div class="container">
-
+      <a href="{{ route('product.create') }}" class="btn btn-primary">Tạo Sản Phẩm Mới</a> <br><br>
         @if (session()->get('success'))
         <div class="alert alert-success">
             {{ session()->get('success') }}
@@ -31,7 +31,7 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
-
+                    {{-- add giỏ hàng --}}
                     <form method="POST" action="{{route('cart.add')}}" class="form-inline my-2 my-lg-0" >
                         @csrf
                         <input name="id" type="hidden" value="{{ $item->id }}">

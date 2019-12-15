@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/product', 'ProductController');
+Route::resource('/product', 'ProductController')->middleware('admin');
 Route::get('/product/{id}/{slug?}', 'ProductController@show')->name('product.show');
 Route::get('/productAjax/{id}', 'ProductController@productAjax')->name('product.productAjax');
 Auth::routes();
