@@ -1,15 +1,11 @@
 <?php
 
-
 namespace App\Providers;
-
-use Illuminate\Support\ServiceProvider;
-//để sử dụng class Schema phải gọi use Illuminate\Support\Facades\Schema;
-
 use Illuminate\Support\Facades\Schema;
-use App\Category;
-use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
 
+use Illuminate\Support\Facades\View;
+use App\Category;
 class AppServiceProvider extends ServiceProvider
 {
     /**

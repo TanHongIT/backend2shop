@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    //không lưu updated_at vào database
+    // Khong luu updated_at vao DB
     public $timestamps = false;
     
     protected $fillable = [
@@ -15,7 +15,7 @@ class Product extends Model
         'product_description',
         'product_image'
     ];
-    //Quan hệ 1-n
+
     public function comments()
     {
         return $this->hasMany('App\Comment');
@@ -25,10 +25,4 @@ class Product extends Model
     {
         return $this->belongsToMany('App\Category');
     }
-
-    //tao them 1 quan he moi
-    public function billdetail(){
-        return $this->hasMany('App\BillDetail', 'id_product','id');
-    }
-    
 }

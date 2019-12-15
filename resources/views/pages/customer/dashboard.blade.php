@@ -1,4 +1,3 @@
-{{-- trang customer --}}
 @extends('layouts.app')
 
 @section('content')
@@ -15,7 +14,7 @@
                         </div>
                     @endif
 
-                    Trang customer
+                    Day la trang customer
                 </div>
             </div>
         </div>

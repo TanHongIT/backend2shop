@@ -21,8 +21,6 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-
-            //Phân quyền
             $table->integer('role')->default(0);
         });
     }

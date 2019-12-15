@@ -8,22 +8,22 @@
         </div>
         <div class="col-md-8">
             <h1>{{ $item->product_name }}</h1>
+
             <p>{{ $item->product_price }}</p>
             <p>{{ $item->product_description }}</p>
+
             <ul>
-                {{-- xuất tất cả cmt có trong product --}}
-            @foreach ($comments as $cmt)
-                <li>{{ $cmt->comment_content }}</li>
+            @foreach ($comments as $comment)
+                <li>{{ $comment->comment_content }}</li>
             @endforeach
-           
             </ul>
-            {{-- form cmt --}}
+
             <form action="{{ route('comment.store') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <textarea name="comment_content" id="comment_content" class="form-control"></textarea>
-                    <input type="hidden" name="product_id" value="{{ $item->id }}"><br>
-                    <button type="submit" class="btn btn-success">Send</button>
+                    <input type="hidden" name="product_id" value="{{ $item->id }}">
+                    <button type="submit">Send</button>
                 </div>
             </form>
         </div>

@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-//dùng class Auth gọi kiểm tra điều kiện middleware
 use Auth;
 class Customer
 {
@@ -16,16 +15,20 @@ class Customer
      */
     public function handle($request, Closure $next)
     {
-        //kiểm tra là admin
-        if(Auth::check() && Auth::user()->role == 1){
+        // Neu la admin
+        if(Auth::check() && Auth::user()->role == 1)
+        {
+            //Chuyen toi trang customer
             return redirect()->route('admin');
         }
-        //kiểm tra customer
-        elseif(Auth::check() && Auth::user()->role == 0){
+        // Neu la customer
+        elseif (Auth::check() && Auth::user()->role == 0)
+        {
+            //Tiep tuc truy cap
             return $next($request);
         }
-        //kiểm tra chưa đăng nhập
-        else{
+        else {
+            // Chuyen toi dang nhap
             return redirect()->route('login');
         }
     }
