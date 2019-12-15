@@ -41,6 +41,7 @@ class ProductController extends Controller
         $request->validate([
             'product_name' => 'required',
             'product_price' => 'required',
+            'product_promotion_pricre'=>'required',
             'product_description' => 'required',
             'product_image' => 'required'
         ]);
@@ -49,6 +50,7 @@ class ProductController extends Controller
         $product = new Product([
             'product_name' => $request->get('product_name'),
             'product_price' => $request->get('product_price'),
+            'product_promotion_pricre' => $request->get('product_promotion_pricre'),
             'product_description' => $request->get('product_description'),
             'product_image' => basename($request->file('product_image')->store('public/images'))
         ]);
@@ -99,6 +101,7 @@ class ProductController extends Controller
         $request->validate([
             'product_name' => 'required',
             'product_price' => 'required',
+            'product_promotion_pricre'=>'required',
             'product_description' => 'required',
         ]);
 
@@ -106,6 +109,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->product_name = $request->get('product_name');
         $product->product_price = $request->get('product_price');
+        $product->product_promotion_pricre = $request->get('product_promotion_pricre');
         $product->product_description = $request->get('product_description');
 
         //3 Luu

@@ -9,7 +9,8 @@
         <div class="col-md-8">
             <h1>{{ $item->product_name }}</h1>
 
-            <p>{{ $item->product_price }}</p>
+            <h5>Giá Cũ {{ $item->product_price }} vnđ</h5>
+            <h4>Giá Mới {{ $item->product_promotion_pricre }} vnđ</h4>
             <p>{{ $item->product_description }}</p>
 
             <ul>

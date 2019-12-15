@@ -26,7 +26,7 @@
             <input type="text" name="product_price" id="product_price" class="form-control" placeholder="Product Price">
         </div>
         <div class="form-group">
-            <input type="text" name="product_promotion_pricre" id="product_promotion_pricre" class="form-control" placeholder="Product Price">
+            <input type="text" name="product_promotion_pricre" id="product_promotion_pricre" class="form-control" placeholder="Product Promotion Price">
         </div>
         <div class="form-group">
             <textarea type="text" name="product_description" id="product_description" class="form-control" placeholder="Product Description"></textarea>
