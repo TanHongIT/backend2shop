@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Dec 11, 2019 at 07:46 AM
--- Server version: 5.7.21
--- PHP Version: 5.6.35
+-- Máy chủ: 127.0.0.1:3306
+-- Thời gian đã tạo: Th12 15, 2019 lúc 03:47 AM
+-- Phiên bản máy phục vụ: 5.7.26
+-- Phiên bản PHP: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `be2`
+-- Cơ sở dữ liệu: `be2`
 --
 CREATE DATABASE IF NOT EXISTS `be2` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `be2`;
@@ -27,7 +27,7 @@ USE `be2`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bill`
+-- Cấu trúc bảng cho bảng `bill`
 --
 
 DROP TABLE IF EXISTS `bill`;
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `bill` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bill_detail`
+-- Cấu trúc bảng cho bảng `bill_detail`
 --
 
 DROP TABLE IF EXISTS `bill_detail`;
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `bill_detail` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Cấu trúc bảng cho bảng `categories`
 --
 
 DROP TABLE IF EXISTS `categories`;
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `categories`
+-- Đang đổ dữ liệu cho bảng `categories`
 --
 
 INSERT INTO `categories` (`id`, `category_name`, `parent_id`, `categories_description`, `categories_image`) VALUES
@@ -96,7 +96,7 @@ INSERT INTO `categories` (`id`, `category_name`, `parent_id`, `categories_descri
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category_product`
+-- Cấu trúc bảng cho bảng `category_product`
 --
 
 DROP TABLE IF EXISTS `category_product`;
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `category_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `category_product`
+-- Đang đổ dữ liệu cho bảng `category_product`
 --
 
 INSERT INTO `category_product` (`product_id`, `category_id`) VALUES
@@ -131,12 +131,54 @@ INSERT INTO `category_product` (`product_id`, `category_id`) VALUES
 (17, 4),
 (17, 5),
 (17, 6),
-(17, 7);
+(17, 7),
+(38, 8),
+(38, 10),
+(39, 8),
+(39, 14),
+(40, 8),
+(40, 14),
+(41, 8),
+(41, 9),
+(42, 8),
+(42, 13),
+(43, 8),
+(43, 10),
+(44, 8),
+(44, 10),
+(45, 8),
+(45, 13),
+(46, 8),
+(46, 9),
+(47, 8),
+(47, 9),
+(48, 8),
+(48, 14),
+(49, 8),
+(49, 11),
+(50, 8),
+(50, 12),
+(51, 8),
+(51, 10),
+(52, 8),
+(52, 9),
+(53, 8),
+(53, 11),
+(54, 8),
+(54, 9),
+(55, 8),
+(55, 11),
+(56, 8),
+(56, 9),
+(57, 8),
+(57, 13),
+(58, 8),
+(58, 13);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comments`
+-- Cấu trúc bảng cho bảng `comments`
 --
 
 DROP TABLE IF EXISTS `comments`;
@@ -151,7 +193,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `comments`
+-- Đang đổ dữ liệu cho bảng `comments`
 --
 
 INSERT INTO `comments` (`id`, `created_at`, `updated_at`, `comment_content`, `product_id`) VALUES
@@ -161,7 +203,7 @@ INSERT INTO `comments` (`id`, `created_at`, `updated_at`, `comment_content`, `pr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer`
+-- Cấu trúc bảng cho bảng `customer`
 --
 
 DROP TABLE IF EXISTS `customer`;
@@ -179,7 +221,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Cấu trúc bảng cho bảng `migrations`
 --
 
 DROP TABLE IF EXISTS `migrations`;
@@ -191,7 +233,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Đang đổ dữ liệu cho bảng `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -202,7 +244,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `news`
+-- Cấu trúc bảng cho bảng `news`
 --
 
 DROP TABLE IF EXISTS `news`;
@@ -217,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `news` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Cấu trúc bảng cho bảng `password_resets`
 --
 
 DROP TABLE IF EXISTS `password_resets`;
@@ -231,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Cấu trúc bảng cho bảng `products`
 --
 
 DROP TABLE IF EXISTS `products`;
@@ -246,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 ) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `products`
+-- Đang đổ dữ liệu cho bảng `products`
 --
 
 INSERT INTO `products` (`id`, `product_name`, `product_price`, `product_description`, `product_image`, `product_promotion_pricre`) VALUES
@@ -282,7 +324,7 @@ INSERT INTO `products` (`id`, `product_name`, `product_price`, `product_descript
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slide`
+-- Cấu trúc bảng cho bảng `slide`
 --
 
 DROP TABLE IF EXISTS `slide`;
@@ -296,7 +338,7 @@ CREATE TABLE IF NOT EXISTS `slide` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -315,7 +357,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`) VALUES
