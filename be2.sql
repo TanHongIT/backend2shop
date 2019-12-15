@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th10 30, 2019 lúc 03:50 AM
--- Phiên bản máy phục vụ: 5.7.26
--- Phiên bản PHP: 7.2.18
+-- Host: 127.0.0.1:3306
+-- Generation Time: Dec 11, 2019 at 07:46 AM
+-- Server version: 5.7.21
+-- PHP Version: 5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `be2`
+-- Database: `be2`
 --
 CREATE DATABASE IF NOT EXISTS `be2` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `be2`;
@@ -27,7 +27,7 @@ USE `be2`;
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `bill`
+-- Table structure for table `bill`
 --
 
 DROP TABLE IF EXISTS `bill`;
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `bill` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `bill_detail`
+-- Table structure for table `bill_detail`
 --
 
 DROP TABLE IF EXISTS `bill_detail`;
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `bill_detail` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `categories`
+-- Table structure for table `categories`
 --
 
 DROP TABLE IF EXISTS `categories`;
@@ -71,10 +71,10 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `categories_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `categories_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `category_name`, `parent_id`, `categories_description`, `categories_image`) VALUES
@@ -84,12 +84,19 @@ INSERT INTO `categories` (`id`, `category_name`, `parent_id`, `categories_descri
 (4, 'iphone', 2, '', ''),
 (5, 'samsung', 2, '', ''),
 (6, 'iphone', 3, '', ''),
-(7, 'ipad', 3, '', '');
+(7, 'ipad', 3, '', ''),
+(8, 'Laptop', 0, '', ''),
+(9, 'Acer', 8, '', ''),
+(10, 'Asus', 8, '', ''),
+(11, 'Dell', 8, '', ''),
+(12, 'HP', 8, '', ''),
+(13, 'Lenovo', 8, '', ''),
+(14, 'MSI', 8, '', '');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category_product`
+-- Table structure for table `category_product`
 --
 
 DROP TABLE IF EXISTS `category_product`;
@@ -100,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `category_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `category_product`
+-- Dumping data for table `category_product`
 --
 
 INSERT INTO `category_product` (`product_id`, `category_id`) VALUES
@@ -129,7 +136,7 @@ INSERT INTO `category_product` (`product_id`, `category_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `comments`
+-- Table structure for table `comments`
 --
 
 DROP TABLE IF EXISTS `comments`;
@@ -144,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `comments`
+-- Dumping data for table `comments`
 --
 
 INSERT INTO `comments` (`id`, `created_at`, `updated_at`, `comment_content`, `product_id`) VALUES
@@ -154,7 +161,7 @@ INSERT INTO `comments` (`id`, `created_at`, `updated_at`, `comment_content`, `pr
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `customer`
+-- Table structure for table `customer`
 --
 
 DROP TABLE IF EXISTS `customer`;
@@ -172,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `migrations`
+-- Table structure for table `migrations`
 --
 
 DROP TABLE IF EXISTS `migrations`;
@@ -184,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -195,7 +202,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `news`
+-- Table structure for table `news`
 --
 
 DROP TABLE IF EXISTS `news`;
@@ -210,7 +217,7 @@ CREATE TABLE IF NOT EXISTS `news` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `password_resets`
+-- Table structure for table `password_resets`
 --
 
 DROP TABLE IF EXISTS `password_resets`;
@@ -224,7 +231,7 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products`
+-- Table structure for table `products`
 --
 
 DROP TABLE IF EXISTS `products`;
@@ -236,10 +243,10 @@ CREATE TABLE IF NOT EXISTS `products` (
   `product_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_promotion_pricre` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `product_name`, `product_price`, `product_description`, `product_image`, `product_promotion_pricre`) VALUES
@@ -249,12 +256,33 @@ INSERT INTO `products` (`id`, `product_name`, `product_price`, `product_descript
 (4, 'Điện Thoại iPhone 7 Plus 32GB - Hàng Chính Hãng', '11990000.00', 'Thiết kế kim loại nguyên khối sang trọng\r\nĐiện Thoại iPhone 7 Plus 32GB - Hàng Chính Hãng FPT với kích thước 158.2 x 77.9 x 7.3 mm mỏng nhẹ và thiết kế tương tự như bộ đôi iPhone 6s/6s Plus, tuy nhiên phần dải nhựa bắt sóng không cắt ngang mặt lưng như phiên bản cũ mà được chuyển sang phần cạnh trên của sản phẩm. Phím Home vật lý trên điện thoại cũng được thay thế bằng phím cảm ứng nhờ vào sự kết hợp Taptic Engine mới và liên kết với 3D Touch tiện lợi và đẹp mắt.', 'iphone7plus.jpg', '0.00'),
 (5, 'Điện Thoại iPhone X 64GB VN/A - Hàng Chính Hãng', '20190000.00', 'Thiết kế lạ mắt không nút Home cứng\r\nĐiện Thoại iPhone X 64GB là chiếc điện thoại hoàn toàn mới của Apple vừa mới ra mắt tuần vừa qua. Trên cơ bản, iPhone X vẫn có những tính năng như những dòng iPhone khác nhưng thiết kế bên ngoài lạ mắt hơn, không trang bị nút Home cứng, viền kim loại sang trọng và đặc biệt là cụm camera sau được trang bị theo chiều dọc tạo điểm nhấn cho chiếc điện thoại.', 'iphonex.jpg', '0.00'),
 (6, 'Điện Thoại Samsung Galaxy A70 (128GB/6GB) - Hàng Chính Hãng', '7189000.00', 'Điện Thoại Samsung Galaxy A70 (128GB/6GB) - Hàng Chính Hãng (Đã Kích Hoạt) Bảo Hành 12 Tháng sản phẩm vẫn được làm bằng chất liệu nhựa giả thủy tinh nhưng là nhựa cao cấp với tên gọi 3D Graffitistic, mang đến sự cứng cáp và chắc chắn khi cầm nắm.\r\n\r\nBên cạnh đó, màu sắc trên lưng máy được trang bị thêm hiệu ứng lấp lánh nên khi nhìn theo góc nghiêng sẽ rất đẹp mắt. Đáng tiếc là A70 vẫn bị bám mồ hôi và dấu vân tay. Ngoài ra, viền bezel của máy cũng được làm rất mỏng, so với các máy thuộc dòng Galaxy A thì A70 là mỏng nhất.', 'SamsungGalaxyA70.jpg', '0.00'),
-(7, 'Điện thoại Samsung Galaxy M10 Ram 2GB 16GB - Hàng chính hãng', '2580000.00', 'Màn hình: PLS TFT LCD, 6.2\", HD+ • Hệ điều hành: Android 8.1 (Oreo) • Camera sau: Chính 13 MP & Phụ 5 MP • Camera trước: 5 MP • CPU: Exynos 7870 8 nhân 64-bit • RAM: 2 GB • Bộ nhớ trong: 16 GB • Thẻ nhớ: MicroSD • Thẻ SIM: 2 SIM Nano (SIM 2 chung khe thẻ nhớ) • Dung lượng pin: 3400 mAh', 'SamsungGalaxyM10.png', '0.00');
+(7, 'Điện thoại Samsung Galaxy M10 Ram 2GB 16GB - Hàng chính hãng', '2580000.00', 'Màn hình: PLS TFT LCD, 6.2\", HD+ • Hệ điều hành: Android 8.1 (Oreo) • Camera sau: Chính 13 MP & Phụ 5 MP • Camera trước: 5 MP • CPU: Exynos 7870 8 nhân 64-bit • RAM: 2 GB • Bộ nhớ trong: 16 GB • Thẻ nhớ: MicroSD • Thẻ SIM: 2 SIM Nano (SIM 2 chung khe thẻ nhớ) • Dung lượng pin: 3400 mAh', 'SamsungGalaxyM10.png', '0.00'),
+(38, 'Laptop ASUS ZenBook 13 UX333FA-A4011T (13.3\" FHD/i5-8265U/8GB/256GB SSD/UHD 620/Win10/1.2 kg)', '22990000.00', 'Tên sản phẩm: Máy tính xách tay/ Laptop Asus Zenbook UX333FA-A4011T (I5-8265U) (Xanh)\r\n\r\n- CPU: Intel Core i5-8265U ( 1.6 GHz - 3.9 GHz / 6MB / 4 nhân, 8 luồng )\r\n- Màn hình: 13.3\" ( 1920 x 1080 ) , không cảm ứng\r\n- RAM: 8GB Onboard LPDDR3\r\n- Đồ họa: Intel UHD Graphics 620\r\n- Lưu trữ: 256GB SSD M.2 NVMe\r\n- Hệ điều hành: Windows 10 Home SL 64-bit\r\n- Pin: 3 cell 50 Wh Pin liền , khối lượng: 1.2 kg', 'Asus_Zenbook_UX333_RoyalBlue_NoNumpad_6.jpg', '22490000.00'),
+(39, 'Laptop MSI GL65 9SDK-054VN (15\" FHD/i5-9300H/8GB/512GB SSD/GTX 1660Ti/Win10/2.3 kg)', '29490000.00', '- CPU: Intel Core i5 9300H (2.4 GHz - 4.1 GHz/8MB/4 nhân, 8 luồng)\r\n- Màn hình: 15.6\" IPS (1920 x 1080), không cảm ứng\r\n- RAM: 1 x 8GB DDR4 2666MHz (2 Khe cắm, Hỗ trợ tối đa 64GB)\r\n- Đồ họa: Intel UHD Graphics 630/ NVIDIA GeForce GTX 1660Ti 6GB\r\n- Lưu trữ: 512GB SSD M.2 NVMe /\r\n- Hệ điều hành: Windows 10 Home SL 64-bit\r\n- Pin: 6 cell 51 Wh Pin liền, Khối lượng: 2.3 kg', 'MSI_GL65_1.jpg', '29090000.00'),
+(40, 'Laptop MSI Prestige PS42 Modern 8M-288VN (14\" FHD/i5-8250U/8GB/UHD 620/Win10/1.2 kg)', '21960000.00', '- CPU: Intel Core i5-8250U ( 1.6 GHz - 3.4 GHz / 6MB / 4 nhân, 8 luồng )\r\n- Màn hình: 14\" ( 1920 x 1080 ) , không cảm ứng\r\n- RAM: 1 x 8GB DDR4 2666MHz\r\n- Đồ họa: Intel UHD Graphics 620 / Shared memory\r\n- Lưu trữ: 256GB SSD M.2 NVMe\r\n- Hệ điều hành: Windows 10 Home SL 64-bit\r\n- Pin: 4 cell 50 Wh Pin liền , khối lượng: 1.2 kg', 'msi ps42_8m_1.jpg', '21060000.00'),
+(41, 'Laptop Acer Nitro 5 AN515-54-51X1 (NH.Q5ASV.011) (15\" FHD/i5-9300H/8GB/256GB SSD/GTX 1050/Win10/2.3 kg)\r\n', '19790000.00', '- CPU: Intel Core i5 9300H (2.4 GHz - 4.1 GHz/8MB/4 nhân, 8 luồng)\r\n- Màn hình: 15.6\" IPS (1920 x 1080), không cảm ứng\r\n- RAM: 1 x 8GB DDR4 2400MHz (2 Khe cắm, Hỗ trợ tối đa 32GB)\r\n- Đồ họa: Intel UHD Graphics 630/ NVIDIA GeForce GTX 1050 3GB\r\n- Lưu trữ: 256GB SSD M.2 NVMe /\r\n- Hệ điều hành: Windows 10 Home 64-bit\r\n- Pin: 4 cell 55 Wh Pin liền, Khối lượng: 2.3 kg', 'Acer_Nitro_5_AN515-54_2019_2.jpg', '19290000.00'),
+(42, 'Laptop Lenovo Ideapad L340-15IRH (81LK007JVN) (15\" FHD/i7-9750H/8GB/1TB HDD/GTX 1050/Free DOS/2.2 kg)', '19990000.00', '- CPU: Intel Core i7 9750H ( 2.6 GHz - 4.5 GHz / 12MB / 6 nhân, 12 luồng )\r\n- Màn hình: 15.6\" ( 1920 x 1080 ) , không cảm ứng\r\n- RAM: 8GB DDR4 2666MHz\r\n- Đồ họa: Intel UHD Graphics 630 / NVIDIA GeForce GTX 1050 3GB GDDR5\r\n- Lưu trữ: 1TB HDD 5400RPM\r\n- Hệ điều hành: Free DOS\r\n- Pin: 3 cell 45 Wh Pin liền , khối lượng: 2.2 kg', 'lenovo ideapad l340-15irh_2.jpg', '19290000.00'),
+(43, 'Laptop ASUS TUF Gaming FX505DT-AL003T (15\" FHD/R7-3750H/8GB/512GB SSD/GTX 1650/Win10/2.2 kg)', '21490000.00', '- CPU: AMD Ryzen 7 3750H ( 2.3 GHz - 4.0 GHz / 4MB / 4 nhân, 8 luồng )\r\n- Màn hình: 15.6\" IPS ( 1920 x 1080 ) , không cảm ứng\r\n- RAM: 1 x 8GB DDR4 2666MHz\r\n- Đồ họa: AMD Radeon Vega 10 Graphics / NVIDIA GeForce GTX 1650 4GB GDDR5\r\n- Lưu trữ: 512GB SSD M.2 NVMe\r\n- Hệ điều hành: Windows 10 Home 64-bit\r\n- Pin: 3 cell 48 Wh Pin liền , khối lượng: 2.2 kg', 'asus tuf gaming fx505dd-dt_1.jpg', '21090000.00'),
+(44, 'Laptop ASUS ROG Zephyrus S GX531GM-ES004T (15.6\" FHD/i7-8750H/16GB/512GB SSD/GTX 1060/Win10/2.1 kg)', '54990000.00', '- CPU: Intel Core i7-8750H ( 2.2 GHz - 4.1 GHz / 9MB / 6 nhân, 12 luồng )\r\n- Màn hình: 15.6\" ( 1920 x 1080 ) , không cảm ứng\r\n- RAM: 16GB (8GB + 8GB Onboard) DDR4 2666MHz\r\n- Đồ họa: Intel UHD Graphics 630 / NVIDIA GeForce GTX 1060 6GB GDDR5\r\n- Lưu trữ: 512GB SSD M.2 NVMe\r\n- Hệ điều hành: Windows 10 Home SL 64-bit\r\n- Pin: 4 cell 50 Wh Pin liền , khối lượng: 2.1 kg', 'Asus_ROG_Zephyrus_GX531GM_1.jpg', '54910000.00'),
+(45, 'Laptop Lenovo Legion Y740-15IRHG (81UH003JVN) (15\" FHD/i7-9750H/16GB/1TB SSD/RTX 2060/Win10/2.2 kg)\r\n', '50000000.00', '- CPU: Intel Core i7-9750H (2.6 GHz - 4.5 GHz/12MB/6 nhân, 12 luồng)\r\n- Màn hình: 15.6\" IPS (1920 x 1080), không cảm ứng\r\n- RAM: 2 x 8GB DDR4 2666MHz (2 Khe cắm, Hỗ trợ tối đa 32GB)\r\n- Đồ họa: Intel UHD Graphics 630/ NVIDIA GeForce RTX 2060 6GB\r\n- Lưu trữ: 1TB SSD M.2 NVMe /\r\n- Hệ điều hành: Windows 10 Home 64-bit\r\n- Pin: 3 cell 57 Wh Pin rời, Khối lượng: 2.2 kg', 'Lenovo_Legion_Y740_1.jpg', '49000000.00'),
+(46, 'Laptop Acer Predator Triton 500 PT515-51-73AA (NH.Q50SV.004) (15\" FHD/i7-9750H/16GB/256GB SSD/RTX 2060/Win10/2.1 kg)\r\n', '49990000.00', '- CPU: Intel Core i7-9750H (2.6 GHz - 4.5 GHz/12MB/6 nhân, 12 luồng)\r\n- Màn hình: 15.6\" IPS (1920 x 1080), không cảm ứng\r\n- RAM: 1 x 16GB DDR4 2666MHz (2 Khe cắm, Hỗ trợ tối đa 32GB)\r\n- Đồ họa: Intel UHD Graphics 630/ NVIDIA GeForce RTX 2060 6GB\r\n- Lưu trữ: 256GB SSD M.2 NVMe /\r\n- Hệ điều hành: Windows 10 Home 64-bit\r\n- Pin: 4 cell 84 Wh Pin liền, Khối lượng: 2.1 kg', 'Laptop_Acer_Predator_Triton_500_1.jpg', '49490000.00'),
+(47, 'Laptop Acer Nitro 7 AN715-51-750K (NH.Q5HSV.003) (15\" FHD/i7-9750H/8GB/256GB SSD/GTX 1660Ti/Win10/2.4 kg)\r\n', '34990000.00', '- CPU: Intel Core i7-9750H (2.6 GHz - 4.5 GHz/12MB/6 nhân, 12 luồng)\r\n- Màn hình: 15.6\" IPS (1920 x 1080), không cảm ứng\r\n- RAM: 1 x 8GB DDR4 2400MHz (2 Khe cắm, Hỗ trợ tối đa 32GB)\r\n- Đồ họa: Intel UHD Graphics 630/ NVIDIA GeForce GTX 1660Ti 6GB\r\n- Lưu trữ: 256GB SSD M.2 NVMe /\r\n- Hệ điều hành: Windows 10 Home 64-bit\r\n- Pin: 4 cell 55 Wh Pin liền, Khối lượng: 2.4 kg', 'Acer_Nitro_7_AN715-51_2019_1.jpg', '34490000.00'),
+(48, 'Laptop MSI GS65 Stealth 9SD-1409VN (15\" FHD/i5-9300H/8GB/512GB SSD/GTX 1660Ti/Win10/1.9 kg)\r\n', '36490000.00', '- CPU: Intel Core i5 9300H (2.4 GHz - 4.1 GHz/8MB/4 nhân, 8 luồng)\r\n- Màn hình: 15.6\" IPS (1920 x 1080), không cảm ứng\r\n- RAM: 1 x 8GB DDR4 2666MHz (2 Khe cắm, Hỗ trợ tối đa 64GB)\r\n- Đồ họa: Intel UHD Graphics 630/ NVIDIA GeForce GTX 1660Ti 6GB\r\n- Lưu trữ: 512GB SSD M.2 NVMe /\r\n- Hệ điều hành: Windows 10 Home 64-bit\r\n- Pin: 4 cell 82 WhKhối lượng: 1.9 kg', 'MSI_Stealth_GS65_2019_3.jpg', '36090000.00'),
+(49, 'Laptop Dell G5 5590-4F4Y41 (15\" FHD/i7-9750H/8GB/256GB SSD/GTX 1650/Win10/2.7 kg)\r\n', '34990000.00', '- CPU: Intel Core i7 9750H (2.6 GHz - 4.5 GHz/12MB/6 nhân, 12 luồng)\r\n- Màn hình: 15.6\" IPS (1920 x 1080), không cảm ứng\r\n- RAM: 2 x 4GB DDR4 2666MHz (2 Khe cắm, Hỗ trợ tối đa 32GB)\r\n- Đồ họa: Intel UHD Graphics 630/ NVIDIA GeForce GTX 1650 4GB\r\n- Lưu trữ: 256GB SSD M.2 NVMe / 1TB HDD 5400RPM\r\n- Hệ điều hành: Windows 10 Home SL 64-bit\r\n- Pin: 4 cell 60 Wh Pin liền, Khối lượng: 2.7 kg', 'Dell_Inspiron_G5_5590_Black_3.jpg', '34490000.00'),
+(50, 'Laptop HP Pavilion Gaming 15-cx0177TX (5EF40PA) (15.6\" FHD/i5-8300H/8GB/1TB HDD/GTX 1050/Win10/2.2 kg)\r\n', '25790000.00', '- CPU: Intel Core i5-8300H ( 2.3 GHz - 4.0 GHz / 8MB / 4 nhân, 8 luồng )\r\n- Màn hình: 15.6\" ( 1920 x 1080 ) , không cảm ứng\r\n- RAM: 1 x 8GB DDR4 2666MHz\r\n- Đồ họa: Intel UHD Graphics 630 / NVIDIA GeForce GTX 1050 4GB GDDR5\r\n- Lưu trữ: 128GB SSD M.2 NVMe / 1TB HDD 7200RPM\r\n- Hệ điều hành: Windows 10 Home SL 64-bit\r\n- Pin: 3 cell 52 Wh Pin liền , khối lượng: 2.2 kg', 'hp gaming pavilion - 15-cx0xxxtx_2.jpg', '25190000.00'),
+(51, 'Laptop ASUS ROG Strix G G531GD-AL025T (15\" FHD/i5-9300H/8GB/512GB SSD/GTX 1050/Win10/2.4 kg)\r\n', '22990000.00', '- CPU: Intel Core i5 9300H (2.4 GHz - 4.1 GHz/8MB/4 nhân, 8 luồng)\r\n- Màn hình: 15.6\" IPS (1920 x 1080), không cảm ứng\r\n- RAM: 1 x 8GB DDR4 2666MHz (2 Khe cắm, Hỗ trợ tối đa 32GB)\r\n- Đồ họa: Intel UHD Graphics 630/ NVIDIA GeForce GTX 1050 4GB\r\n- Lưu trữ: 512GB SSD M.2 NVMe /\r\n- Hệ điều hành: Windows 10 Home 64-bit\r\n- Pin: 4 cell 48 Wh Pin liền, Khối lượng: 2.4 kg', 'Asus_ROG_Strix_G531GD-GT_2.jpg', '22490000.00'),
+(52, 'Laptop Acer Aspire 5 A515-54-54EU (NX.HN3SV.002) (15\" FHD/i5-10210U/8GB/512GB SSD/UHD 620/Win10/1.7 kg)\r\n', '15990000.00', '- CPU: Intel Core i5-10210U (1.6 GHz - 4.2 GHz/6MB/4 nhân, 8 luồng)\r\n- Màn hình: 15.6\" (1920 x 1080), không cảm ứng\r\n- RAM: 1 x 8GB DDR4 2133MHz (1 Khe cắm, Hỗ trợ tối đa 16GB)\r\n- Đồ họa: Intel UHD Graphics 620\r\n- Lưu trữ: 512GB SSD M.2 NVMe /\r\n- Hệ điều hành: Windows 10 Home 64-bit\r\n- Pin: 4 cell 48 WhKhối lượng: 1.7 kg\r\n', 'Acer_Aspire_A515-54_Silver_2019_3.jpg', '15590000.00'),
+(53, 'Laptop Acer Aspire 3 A315-42-R8PX (NX.HF9SV.00A) (15\" FHD/R3-3200U/8GB/256GB SSD/Radeon Vega 3/Win10/1.7 kg)\r\n', '10990000.00', '- CPU: AMD Ryzen 3 3200U (2.6 GHz - 3.5 GHz/4MB/2 nhân, 4 luồng)\r\n- Màn hình: 15.6\" (1920 x 1080), không cảm ứng\r\n- RAM: 1 x 8GB DDR4 2133MHz (2 Khe cắm, Hỗ trợ tối đa 16GB)\r\n- Đồ họa: AMD Radeon Vega 3 Graphics\r\n- Lưu trữ: 256GB SSD M.2 NVMe /\r\n- Hệ điều hành: Windows 10 Home 64-bit\r\n- Pin: 2 cell 37 WhKhối lượng: 1.7 kg', 'Acer_Aspire_A315-54_2019_2.jpg', '10490000.00'),
+(54, 'Laptop Acer Aspire 3 A315-54K-32SD (NX.HFXSV.001) (15\" FHD/i3-7020U/4GB/256GB SSD/HD 620/Win10/1.7 kg)\r\n', '9990000.00', '- CPU: Intel Core i3-7020U (2.3 GHz/3MB/2 nhân, 4 luồng)\r\n- Màn hình: 15.6\" (1920 x 1080), không cảm ứng\r\n- RAM: 1 x 4GB Onboard DDR4 2133MHz (1 Khe cắm, Hỗ trợ tối đa 8GB)\r\n- Đồ họa: Intel HD Graphics 620\r\n- Lưu trữ: 256GB SSD M.2 NVMe /\r\n- Hệ điều hành: Windows 10 Home 64-bit\r\n- Pin: 2 cell 37 WhKhối lượng: 1.7 kg', 'Acer_Aspire_3_A315-54-54K_Red_1.jpg', '9490000.00'),
+(55, 'Laptop Dell Inspiron 3567-N3567U (15\" FHD/i3-7020U/4GB/1TB HDD/HD 620/Ubuntu/2.3 kg)', '9490000.00', '- CPU: Intel Core i3-7020U ( 2.3 GHz / 3MB / 2 nhân, 4 luồng )\r\n- Màn hình: 15.6\" TN ( 1920 x 1080 ) , không cảm ứng\r\n- RAM: 1 x 4GB DDR4 2400MHz\r\n- Đồ họa: Intel HD Graphics 620 / Shared memory\r\n- Lưu trữ: 1TB HDD 5400RPM\r\n- Hệ điều hành: Ubuntu\r\n- Pin: 4 cell Pin rời , khối lượng: 2.3 kg', 'dell inspiron 3567_2.jpg', '9090000.00'),
+(56, 'Laptop Acer Swift 3 SF314-57G-53T1 (NX.HJESV.001) (14\" FHD/i5-1035G1/8GB/512GB SSD/MX250/Win10/1.2kg)\r\n', '19990000.00', '- CPU: Intel Core i5-1035G1 (1.0 GHz - 3.6 GHz/6MB/4 nhân, 8 luồng)\r\n- Màn hình: 14\" IPS (1920 x 1080), không cảm ứng\r\n- RAM: 8GB Onboard LPDDR4 2666MHz , Không nâng cấp được)\r\n- Đồ họa: Intel UHD Graphics/ NVIDIA GeForce MX250 2GB\r\n- Lưu trữ: 512GB SSD M.2 NVMe /\r\n- Hệ điều hành: Windows 10 Home 64-bit\r\n- Pin: 3 cell 48 Wh Pin liền, Khối lượng: 1.2 kg', 'Acer_Swift_3_SF314-57G_Gray_3.jpg', '19490000.00'),
+(57, 'Laptop Lenovo ThinkPad E590 (20NBS07000) (15\" HD/i5-8265U/4GB/1TB HDD/UHD 620/Free DOS/2.1 kg)\r\n', '16990000.00', '- CPU: Intel Core i5-8265U ( 1.6 GHz - 3.9 GHz / 6MB / 4 nhân, 8 luồng )\r\n- Màn hình: 15.6\" IPS ( 1366 x 768 ) , không cảm ứng\r\n- RAM: 1 x 4GB DDR4 2400MHz\r\n- Đồ họa: Intel UHD Graphics 620\r\n- Lưu trữ: 1TB HDD 5400RPM\r\n- Hệ điều hành: Free DOS\r\n- Pin: 3 cell 45 Wh Pin rời , khối lượng: 2.1 kg', 'lenovo thinkpad e590_1.jpg', '16490000.00'),
+(58, 'Laptop Lenovo ThinkPad L380 (20M5S01500) (13.3\" FHD/i5-8250U/4GB/UHD 620/Free DOS/1.5 kg)\r\n', '19490000.00', '- CPU: Intel Core i5-8250U ( 1.6 GHz - 3.4 GHz / 6MB / 4 nhân, 8 luồng )\r\n- Màn hình: 13.3\" IPS ( 1920 x 1080 ) , không cảm ứng\r\n- RAM: 1 x 4GB DDR4 2400MHz\r\n- Đồ họa: Intel UHD Graphics 620\r\n- Lưu trữ: 256GB SSD M.2 SATA\r\n- Hệ điều hành: Free DOS\r\n- Pin: 3 cell 45 Wh Pin liền , khối lượng: 1.5 kg', 'thinkpad-l380-20m5s01500-i5-8250u-bac-1-v.jpg', '19090000.00');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `slide`
+-- Table structure for table `slide`
 --
 
 DROP TABLE IF EXISTS `slide`;
@@ -268,7 +296,7 @@ CREATE TABLE IF NOT EXISTS `slide` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -287,7 +315,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`) VALUES
