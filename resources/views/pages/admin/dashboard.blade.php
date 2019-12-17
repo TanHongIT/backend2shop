@@ -3,7 +3,7 @@
     $products = Product::paginate(6);
 ?>
 
-@extends('layouts.default')
+@extends('layouts.app')
 
 
 @section('content')
