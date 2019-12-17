@@ -13652,6 +13652,7 @@ fieldset[disabled] .form-group .form-control {
   left: 0;
   top: 0;
   content: "";
+  background-image: url(../img/login.jpg);
 }
 
 .page-header:before {
