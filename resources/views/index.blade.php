@@ -11,35 +11,36 @@
             {{ session()->get('success') }}
         </div>
         @endif
+        <div class="beta-products-list">
+          <h4>Top Products</h4>
+          <div class="row">
+              @foreach($products as $item)
+              <div class="col-md-4">
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="{{ asset('storage/images/' . $item->product_image) }}" alt="Card image cap" onclick="getProduct('{{route('product.productAjax',$item->id)}}',
+                    '{{ asset('storage/images/') }}')">
+                  <div class="card-body">
+                      <p><a href="{{ route('product.show', ['id' => $item->id, 'slug' =>  Str::slug($item->product_name, '-')]) . '.html' }}">{{ $item->product_name }}</a></p>
 
-        <div class="row">
-            
-            @foreach($products as $item)
-            <div class="col-md-4">
-                <div class="card mb-4 box-shadow">
-                  <img class="card-img-top" src="{{ asset('storage/images/' . $item->product_image) }}" alt="Card image cap" onclick="getProduct('{{route('product.productAjax',$item->id)}}',
-                  '{{ asset('storage/images/') }}')">
-                <div class="card-body">
-                    <p><a href="{{ route('product.show', ['id' => $item->id, 'slug' =>  Str::slug($item->product_name, '-')]) . '.html' }}">{{ $item->product_name }}</a></p>
+                      <p class="card-text">{{ mb_substr($item->product_description,0, 100) }}</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <p class="card-text">Giá Cũ {{ $item->product_price}}VNĐ <br>
+                              Giá Mới {{ $item->product_promotion_pricre}} VNĐ
+                        </p>
+                      
+                      {{-- add giỏ hàng --}}
+                      <form method="POST" action="{{route('cart.add')}}" class="form-inline my-2 my-lg-0" >
+                          @csrf
+                          <input name="id" type="hidden" value="{{ $item->id }}">
+                          <button class="btn btn-success btn-block" type="submit">Add to cart</button>
+                      </form>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+              @endforeach
 
-                    <p class="card-text">{{ mb_substr($item->product_description,0, 100) }}</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <p class="card-text">Giá Cũ {{ $item->product_price}}VNĐ <br>
-                            Giá Mới {{ $item->product_promotion_pricre}} VNĐ
-                      </p>
-                    
-                    {{-- add giỏ hàng --}}
-                    <form method="POST" action="{{route('cart.add')}}" class="form-inline my-2 my-lg-0" >
-                        @csrf
-                        <input name="id" type="hidden" value="{{ $item->id }}">
-                        <button class="btn btn-success btn-block" type="submit">Add to cart</button>
-                    </form>
-                    </div>
-                </div>
-                </div>
-            </div>
-            @endforeach
-
+          </div>
         </div>
         {{$products->links()}}
     </div>
