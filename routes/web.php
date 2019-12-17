@@ -1,5 +1,5 @@
 <?php
-
+ 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,9 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use App\Product;
 Route::get('/', function () {
-    return view('welcome');
+    $products = Product::paginate(6);
+    return view ('.index',compact('products'));
 });
 
 Route::resource('/product', 'ProductController')->middleware('admin');
