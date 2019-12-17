@@ -8869,7 +8869,10 @@ a.text-dark:focus {
   box-shadow: none;
 }
 
-.btn.btn-primary.btn-link:hover,
+.btn.btn-primary.btn-link:hover{
+  color: #fff;
+  background-color: #9c27b0;
+}
 .btn.btn-primary.btn-link:focus,
 .btn.btn-primary.btn-link:active {
   background-color: transparent;
