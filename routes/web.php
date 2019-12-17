@@ -33,3 +33,6 @@ Route::resource('/category', 'CategoryController');
 Route::post('/cart-add', 'CartController@add')->name('cart.add');
 Route::get('/cart-checkout', 'CartController@cart')->name('cart.checkout');
 Route::post('/cart-clear', 'CartController@clear')->name('cart.clear');
+
+Route::get('/product/edit', 'ProfileController@index')->name('profile.edit');
+Route::get('users/index', 'UserController@index')->name('user.index');
