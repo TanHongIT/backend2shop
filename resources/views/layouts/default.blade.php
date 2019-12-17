@@ -58,6 +58,15 @@
             <input class="form-control mr-sm-2" type="text" placeholder="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
+
+          <div class="">
+            @if (Auth::Check())
+              <a href="{{url('/home')}}">Logout</a>
+            @else 
+              <a href="{{url('/login')}}">Login</a>
+            @endif
+          </div>
+
           <a class="btn btn-success btn-sm ml-3" href="{{route('cart.checkout')}}">
               <i class="fa fa-shopping-cart"></i> Cart Total Qty
               <span class="badge badge-light">{{Cart::getTotalQuantity()}}</span>
