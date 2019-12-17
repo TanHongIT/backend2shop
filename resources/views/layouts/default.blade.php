@@ -61,7 +61,7 @@
 
           <div class="">
             @if (Auth::Check())
-              <a href="{{url('/home')}}">Logout</a>
+              <a href="{{url('/home')}}">User</a>
             @else 
               <a href="{{url('/login')}}">Login</a>
             @endif
