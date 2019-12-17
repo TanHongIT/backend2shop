@@ -25,6 +25,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- CSS Files -->
     <link href="{{ asset('assets/css/material-dashboard.css?v=2.1.1') }}" rel="stylesheet" />
+    <!-- CSS Files scroll to top-->
+    <link href="{{ asset('assets/css/styleadmin.css') }}" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{ asset('assets/demo/demo.css') }}" rel="stylesheet" />
 </head>
@@ -141,6 +143,8 @@
         <!-- Material Dashboard DEMO methods, don't include it in your project! -->
         <script src="{{ asset('asstes/demo/demo.js')}}"></script>
         <script src="{{ asset('asstes/js/settings.js')}}"></script>
+        <!-- scroll to top -->
+        <script src="{{ asset('asstes/js/scripadmin.js')}}"></script>
         @stack('js')
 </body>
 </html>

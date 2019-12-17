@@ -30,6 +30,8 @@
         document.write(new Date().getFullYear())
       </script>, made with <i class="material-icons">favorite</i> by
       <a href="https://tanhongit.net/" target="_blank">T2T Team</a> for a better web.
+      
     </div>
   </div>
+  <a class="on_top" href="#top" style="display: block;"><i class="fa-arrow-circle-up fa"></i></a>
 </footer>

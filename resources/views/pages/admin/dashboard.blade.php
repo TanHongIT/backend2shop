@@ -1,6 +1,6 @@
 <?php 
     use App\Product;
-    $products = Product::paginate(6);
+    $products = Product::paginate(9);
 ?>
 
 @extends('layouts.app')
