@@ -26,4 +26,10 @@ class Product extends Model
     {
         return $this->belongsToMany('App\Category');
     }
+
+    protected $table = "products";
+    public function bill_detail()
+    {
+        return $this->hasMany('App\BillDetail','id_product','id');
+    }
 }
