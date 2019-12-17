@@ -14,9 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        // Lay tat ca san pham
-        $products = Product::paginate(3);
-        return view('pages.product.index', compact('products'));
+        // // Lay tat ca san pham
+        // $products = Product::paginate(6);
+        // return view('pages.product.index', compact('products'));
     }
 
     /**
