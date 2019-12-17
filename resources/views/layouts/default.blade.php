@@ -105,6 +105,8 @@
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/style.css">
 	<link rel="stylesheet" href="source/assets/dest/css/animate.css">
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/huong-style.css">
+	<!-- CSS Files scroll to top-->
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
 </head>
 <body>
 	<div id="header">
@@ -132,15 +134,16 @@
 		<div class="header-body">
 			<div class="container beta-relative">
 				<div class="pull-left">
-					<a href="index.html" id="logo"><img src="assets/dest/images/logo-cake.png" width="200px" alt=""></a>
+					trong file default =]]]z tự vào xóa
+				<h1><a href="{{ url('') }}" id="logo"><img src="assets/dest/images/logo-cake.png" width="200px" alt="">T2T Team From Back-End 2 With Love </a></h1><br>
 				</div>
 				<div class="pull-right beta-components space-left ov">
 					<div class="space10">&nbsp;</div>
 					<div class="beta-comp">
-						<form role="search" method="get" id="searchform" action="/">
-					        <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />
-					        <button class="fa fa-search" type="submit" id="searchsubmit"></button>
-						</form>
+						<form class="form-inline my-2 my-lg-0">
+							<input class="form-control mr-sm-2" type="text" placeholder="Search">
+							<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+						  </form>
 					</div>
 
 					<div class="beta-comp">
@@ -187,6 +190,7 @@
 			</div> <!-- .container -->
 		</div> <!-- .header-bottom -->
 	</div> <!-- #header -->
+	<br>
 	<div class="rev-slider">
 	<div class="fullwidthbanner-container">
 					<div class="fullwidthbanner">
@@ -194,30 +198,15 @@
 					    <div class="banner" >
 								<ul>
 									<!-- THE FIRST SLIDE -->
-									<li data-transition="boxfade" data-slotamount="20" class="active-revslide" style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0;">
-						            <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-													<div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="assets/dest/images/thumbs/1.jpg" data-src="assets/dest/images/thumbs/1.jpg" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('assets/dest/images/thumbs/1.jpg'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
-													</div>
-												</div>
-
-						        </li>
 								<li data-transition="boxfade" data-slotamount="20" class="active-revslide" style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0;">
 						          <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-												<div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="assets/dest/images/thumbs/1.jpg" data-src="assets/dest/images/thumbs/1.jpg" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('assets/dest/images/thumbs/1.jpg'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
+												<div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="{{ asset('storage/images/Laptop-Banner-2.png') }}" data-src="{{ asset('storage/images/Laptop-Banner-2.png') }}" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('{{ asset('storage/images/Laptop-Banner-2.png') }}'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
 											</div>
 											</div>
-
-								<li data-transition="boxfade" data-slotamount="20" class="active-revslide" style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0;">
-						            <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-													<div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="assets/dest/images/thumbs/1.jpg" data-src="assets/dest/images/thumbs/1.jpg" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('assets/dest/images/thumbs/1.jpg'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
-												</div>
-											</div>
-
-						        </li>
-
+								</li>
 								<li data-transition="boxfade" data-slotamount="20" class="active-revslide current-sr-slide-visible" style="width: 100%; height: 100%; overflow: hidden; visibility: inherit; opacity: 1; z-index: 20;">
 						            <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-													<div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="assets/dest/images/thumbs/1.jpg" data-src="assets/dest/images/thumbs/1.jpg" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('assets/dest/images/thumbs/1.jpg'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
+													<div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="{{ asset('storage/images/Laptop-Banner-4.png') }}" data-src="{{ asset('storage/images/Laptop-Banner-4.png') }}" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('{{ asset('storage/images/Laptop-Banner-4.png') }}'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
 												</div>
 											</div>
 
@@ -254,12 +243,12 @@
 						<h4 class="widget-title">Information</h4>
 						<div>
 							<ul>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web Design</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web development</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Marketing</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Tips</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Resources</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Illustrations</a></li>
+								<li><a href=""><i class="fa fa-chevron-right"></i> Web Design</a></li>
+								<li><a href=""><i class="fa fa-chevron-right"></i> Web development</a></li>
+								<li><a href=""><i class="fa fa-chevron-right"></i> Marketing</a></li>
+								<li><a href=""><i class="fa fa-chevron-right"></i> Tips</a></li>
+								<li><a href=""><i class="fa fa-chevron-right"></i> Resources</a></li>
+								<li><a href=""><i class="fa fa-chevron-right"></i> Illustrations</a></li>
 							</ul>
 						</div>
 					</div>
@@ -281,9 +270,9 @@
 				<div class="col-sm-3">
 					<div class="widget">
 						<h4 class="widget-title">Newsletter Subscribe</h4>
-						<form action="#" method="post">
+						<form action="" method="GET">
 							<input type="email" name="your_email">
-							<button class="pull-right" type="submit">Subscribe <i class="fa fa-chevron-right"></i></button>
+							<button class="pull-right" type="">Subscribe <i class="fa fa-chevron-right"></i></button>
 						</form>
 					</div>
 				</div>
@@ -317,6 +306,8 @@
 	<script src="source/assets/dest/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 	<script src="source/assets/dest/js/waypoints.min.js"></script>
 	<script src="source/assets/dest/js/wow.min.js"></script>
+<!-- scroll to top -->
+<script src="{{ asset('asstes/js/scrip.js')}}"></script>
 	<!--customjs-->
 	<script src="source/assets/dest/js/custom2.js"></script>
 	<script>
@@ -330,5 +321,7 @@
 		)
 	})
 	</script>
+	
 </body>
+<a class="on_top" href="#top" style="display: block;"><i class="fa-arrow-circle-up fa"></i></a>
 </html>

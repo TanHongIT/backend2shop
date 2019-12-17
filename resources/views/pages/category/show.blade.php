@@ -23,7 +23,7 @@
                     '{{ asset('storage/images/') }}')">
                 <div class="card-body">
 
-                    <p><a href="{{ route('product.show', ['id' => $item->id, 'slug' =>  Str::slug($item->product_name, '-')]) . '.html' }}">{{ $item->product_name }}</a></p>
+                  <h6><a href="{{ route('product.show', ['id' => $item->id, 'slug' =>  Str::slug($item->product_name, '-')]) . '.html' }}">{{ mb_substr($item->product_name,0,40) }}</a></h6>
 
                     <p class="card-text">{{ mb_substr($item->product_description,0, 100) }}</p>
                     <div class="d-flex justify-content-between align-items-center">
@@ -45,6 +45,9 @@
         </div>
     </div>
 </div>
+<br>
+<br>
+<br>
 <!-- Modal -->
 <script src="{{ asset('js/siteajax.js') }}"></script>
 

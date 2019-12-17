@@ -12,9 +12,10 @@ a.on_top i{
 }
 a.on_top {
     border-radius: 6px;
-    background-color: #333333;
+    background-color: #007bb6;
     padding: 10px 20px;
-    white-space: nowrap; color: #fff;
+    white-space: nowrap;
+     color: #fff;
     position: fixed;
     bottom: 75px;
     right: 30px;

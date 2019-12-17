@@ -11,22 +11,21 @@
         </div>
         @endif
         <div class="beta-products-list">
-          <h4>Top Products</h4>
+          <br><br>
+          <h4>Products</h4>
           <div class="row">
               @foreach($products as $item)
               <div class="col-md-4">
                   <div class="card mb-4 box-shadow">
-                    <img class="card-img-top" src="{{ asset('storage/images/' . $item->product_image) }}" alt="Card image cap" onclick="getProduct('{{route('product.productAjax',$item->id)}}',
-                    '{{ asset('storage/images/') }}')">
+                    <img class="card-img-top" src="{{ asset('storage/images/' . $item->product_image) }}" alt="Card image cap" onclick="getProduct('{{ route('product.productAjax', $item->id) }}')">
                   <div class="card-body">
-                      <p><a href="{{ route('product.show', ['id' => $item->id, 'slug' =>  Str::slug($item->product_name, '-')]) . '.html' }}">{{ $item->product_name }}</a></p>
+                      <h6><a href="{{ route('product.show', ['id' => $item->id, 'slug' =>  Str::slug($item->product_name, '-')]) . '.html' }}">{{ mb_substr($item->product_name,0,40) }}</a></h6>
 
-                      <p class="card-text">{{ mb_substr($item->product_description,0, 100) }}</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <p class="card-text">Giá Cũ {{ $item->product_price}}VNĐ <br>
-                              Giá Mới {{ $item->product_promotion_pricre}} VNĐ
-                        </p>
-                      
+                      <p class="card-text">{{ mb_substr($item->product_description,0, 100) }}... <a href="https://www.google.com/">Read More</a></p>
+                      <div class="d-flex justify-content-between align-items-center"> <br>
+                        <p class="card-text"> <strike> Giá Cũ {{ $item->product_price}}VNĐ</strike></p> <br>
+                        <h6 class="card-text"> Giá Mới {{ $item->product_promotion_pricre}} VNĐ</h6>
+                      <br>
                       {{-- add giỏ hàng --}}
                       <form method="POST" action="{{route('cart.add')}}" class="form-inline my-2 my-lg-0" >
                           @csrf
@@ -36,11 +35,12 @@
                       </div>
                   </div>
                   </div>
+                  <br><br><br>
               </div>
               @endforeach
-
           </div>
         </div>
+        
         {{$products->links()}}
     </div>
 </div>
@@ -52,7 +52,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Chi Tiết Sản Phẩm</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
