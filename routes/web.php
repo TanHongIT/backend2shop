@@ -33,6 +33,14 @@ Route::resource('/category', 'CategoryController');
 Route::post('/cart-add', 'CartController@add')->name('cart.add');
 Route::get('/cart-checkout', 'CartController@cart')->name('cart.checkout');
 Route::post('/cart-clear', 'CartController@clear')->name('cart.clear');
+Route::get('/contact','HomeController@getContact')->name('contact');
+//cach 1
+// Route::get('/about','HomeController@getAbout')->name('about');
+//cach 2
+Route::get('/about',[
+    'as' => 'about',
+    'uses' => 'HomeController@getAbout'
+]);
 
 Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
 Route::get('users', 'UserController@index')->name('user.index');

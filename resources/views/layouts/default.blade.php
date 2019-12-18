@@ -114,8 +114,8 @@
 			<div class="container">
 				<div class="pull-left auto-width-left">
 					<ul class="top-menu menu-beta l-inline">
-						<li><a href=""><i class="fa fa-home"></i> 90-92 Lê Thị Riêng, Bến Thành, Quận 1</a></li>
-						<li><a href=""><i class="fa fa-phone"></i> 0163 296 7751</a></li>
+						<li><a href=""><i class="fa fa-home"></i> Võ Văn Ngân, Thủ Đức</a></li>
+						<li><a href=""><i class="fa fa-phone"></i> 0123 456 789</a></li>
 					</ul>
 				</div>
 				<div class="pull-right auto-width-right">
@@ -182,8 +182,8 @@
 							@endif 
 							</li>
 						@endforeach
-						<li><a href="#">Giới thiệu</a></li>
-						<li><a href="#">Liên hệ</a></li>
+						<li><a href="{{route('about')}}">Giới thiệu</a></li>
+						<li><a href="{{route('contact')}}">Liên hệ</a></li>
 					</ul>
 					<div class="clearfix"></div>
 				</nav>
@@ -234,7 +234,7 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="widget">
-						<h4 class="widget-title">Instagram Feed</h4>
+						<h4 class="widget-title" style='text-align:center'>T2T Shop</h4>
 						<div id="beta-instagram-feed"><div></div></div>
 					</div>
 				</div>
@@ -246,9 +246,6 @@
 								<li><a href=""><i class="fa fa-chevron-right"></i> Web Design</a></li>
 								<li><a href=""><i class="fa fa-chevron-right"></i> Web development</a></li>
 								<li><a href=""><i class="fa fa-chevron-right"></i> Marketing</a></li>
-								<li><a href=""><i class="fa fa-chevron-right"></i> Tips</a></li>
-								<li><a href=""><i class="fa fa-chevron-right"></i> Resources</a></li>
-								<li><a href=""><i class="fa fa-chevron-right"></i> Illustrations</a></li>
 							</ul>
 						</div>
 					</div>
@@ -260,8 +257,8 @@
 						<div>
 							<div class="contact-info">
 								<i class="fa fa-map-marker"></i>
-								<p>30 South Park Avenue San Francisco, CA 94108 Phone: +78 123 456 78</p>
-								<p>Nemo enim ipsam voluptatem quia voluptas sit asnatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>
+								<p>HCM, The Phone: +84 123 456 78</p>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 							</div>
 						</div>
 					</div>
@@ -281,9 +278,11 @@
 	</div> <!-- #footer -->
 	<div class="copyright">
 		<div class="container">
-			<p class="pull-left">Privacy policy. (&copy;) 2014</p>
+			<p class="pull-left">Privacy policy. (&copy;) <script>
+				document.write(new Date().getFullYear())
+			  </script></p>
 			<p class="pull-right pay-options">
-				<a href="#"><img src="source/assets/dest/images/pay/master.jpg" alt="" /></a>
+				<a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a>
 				<a href="#"><img src="source/assets/dest/images/pay/pay.jpg" alt="" /></a>
 				<a href="#"><img src="source/assets/dest/images/pay/visa.jpg" alt="" /></a>
 				<a href="#"><img src="source/assets/dest/images/pay/paypal.jpg" alt="" /></a>
