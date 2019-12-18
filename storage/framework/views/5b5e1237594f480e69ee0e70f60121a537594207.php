@@ -16,9 +16,11 @@
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/style.css">
 	<link rel="stylesheet" href="source/assets/dest/css/animate.css">
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/huong-style.css">
+	
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<!-- CSS Files scroll to top-->
-    <link href="<?php echo e(asset('assets/css/style.css')); ?>" rel="stylesheet" />
+	<link href="<?php echo e(asset('assets/css/style.css')); ?>" rel="stylesheet" />
+	<script src="//cdn.ckeditor.com/4.13.1/full/ckeditor.js"></script>
 </head>
 <body>
 	<div id="header">

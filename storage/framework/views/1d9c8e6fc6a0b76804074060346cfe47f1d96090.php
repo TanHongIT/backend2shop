@@ -18,35 +18,42 @@
     <form action="<?php echo e(route('product.store')); ?>" method="post" enctype="multipart/form-data">
         
         <?php echo csrf_field(); ?>
+        <div class="col-md">
         <div class="form-group">
             Name: <input type="text" name="product_name" id="product_name" class="form-control" placeholder="Product Name">
-        </div>
-        <div class="form-group">
+        </div></div>
+        <div class="col-md-6"><div class="form-group">
             Price: <input type="text" name="product_price" id="product_price" class="form-control" placeholder="Product Price">
-        </div>
-        <div class="form-group">
+        </div></div>
+        <div class="col-md-6"><div class="form-group">
             Promotion: <input type="text" name="product_promotion_pricre" id="product_promotion_pricre" class="form-control" placeholder="Product Promotion Price">
-        </div>
+        </div></div>
         <div class="form-group">
             Description: <textarea type="text" name="product_description" id="product_description" class="form-control" placeholder="Product Description"></textarea>
+            <script> CKEDITOR.replace( 'product_description' );</script>
         </div>
         <div class="form-group">
             Select Picture: <input type="file" name="product_image" id="product_image" class="form-control" placeholder="Product Image">
         </div>
-
+        <div class="checkbox">
             <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="checkbox">                        
+                 
+                    <div class="col-md-2">                     
                     <label>
                         <input type="checkbox" name="category_id[]" id="category_id" value="<?php echo e($category->id); ?>">
                             <?php echo e($category->category_name); ?>
 
                     </label>
-                </div>
+                </div>  
+                
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
             
 
-        
-        <button type="submit" class="btn btn-primary">Add</button>
+        <br>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary" style="text-align:center">Add Product</button>
         <br>
         <br>
         <br>
