@@ -30,7 +30,7 @@ Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin'
 Route::get('/customer', 'CustomerController@index')->name('customer')->middleware('customer');
 
 Route::resource('/comment', 'CommentController');
-Route::resource('/category', 'CategoryController');
+Route::resource('/category', 'CategoryController')->middleware('admin');
 
 
 Route::post('/cart-add', 'CartController@add')->name('cart.add');
