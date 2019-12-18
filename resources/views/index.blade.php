@@ -35,16 +35,18 @@
         @endif
         <div class="beta-products-list">
           <br><br>
-          <h4>Products</h4>
+          <h2>Tổng Hợp Sản Phẩm</h2>
           <div class="row">
+            Tìm Thấy {{count($products)}} Sản Phẩm Trong Trang
               @foreach($products as $item)
+              
               <div class="col-md-4">
                   <div class="card mb-4 box-shadow">
                     <img class="card-img-top" src="{{ asset('storage/images/' . $item->product_image) }}" alt="Card image cap" onclick="getProduct('{{ route('product.productAjax', $item->id) }}')">
                   <div class="card-body">
                       <h6><a href="{{ route('product.show', ['id' => $item->id, 'slug' =>  Str::slug($item->product_name, '-')]) . '.html' }}">{{ mb_substr($item->product_name,0,40) }}</a></h6>
 
-                      <p class="card-text">{{ mb_substr($item->product_description,0, 100) }}... <a href="https://www.google.com/">Read More</a></p>
+                      <p class="card-text">{{ mb_substr($item->product_description,0, 100) }}... <br><b><a href="{{ route('product.show', ['id' => $item->id, 'slug' =>  Str::slug($item->product_name, '-')]) . '.html' }}">Read More</a></b></p>
                       <div class="d-flex justify-content-between align-items-center"> <br>
                         {{-- <p class="card-text"> <strike> Giá {{ $item->product_price}}VNĐ</strike></p> <br>
                         <h6 class="card-text"> Sale {{ $item->product_promotion_pricre}} VNĐ</h6> --}}
@@ -71,6 +73,45 @@
         </div>
         
         {{$products->links()}}
+        <hr>
+        <h2>Sản Phẩm Giảm Giá</h2>
+          <div class="row">
+            
+              @foreach($product_sale as $item)
+              <div class="col-md-4">
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="{{ asset('storage/images/' . $item->product_image) }}" alt="Card image cap" onclick="getProduct('{{ route('product.productAjax', $item->id) }}')">
+                  <div class="card-body">
+                      <h6><a href="{{ route('product.show', ['id' => $item->id, 'slug' =>  Str::slug($item->product_name, '-')]) . '.html' }}">{{ mb_substr($item->product_name,0,40) }}</a></h6>
+
+                      <p class="card-text">{{ mb_substr($item->product_description,0, 100) }}... <br><b><a href="{{ route('product.show', ['id' => $item->id, 'slug' =>  Str::slug($item->product_name, '-')]) . '.html' }}">Read More</a></b></p>
+                      <div class="d-flex justify-content-between align-items-center"> <br>
+                        {{-- <p class="card-text"> <strike> Giá {{ $item->product_price}}VNĐ</strike></p> <br>
+                        <h6 class="card-text"> Sale {{ $item->product_promotion_pricre}} VNĐ</h6> --}}
+                        @if($item->product_promotion_pricre==0)
+                        <h6 class="card-text">Giá {{ $item->product_price}}VNĐ</h6> <br>
+                        @else
+                        <p class="card-text"> <strike> Giá {{ $item->product_price}}VNĐ</strike></p> <br>
+                        <h6 class="card-text"> Sale {{ $item->product_promotion_pricre}} VNĐ</h6>
+                        @endif
+                      <br>
+                      {{-- add giỏ hàng --}}
+                      <form method="POST" action="{{route('cart.add')}}" class="form-inline my-2 my-lg-0" >
+                          @csrf
+                          <input name="id" type="hidden" value="{{ $item->id }}">
+                          <button class="btn btn-success btn-block" type="submit">Add to cart</button>
+                      </form>
+                      </div>
+                  </div>
+                  </div>
+                  <br><br><br>
+              </div>
+              @endforeach
+          </div>
+          {{$product_sale->links()}}
+        </div>
+        
+        
     </div>
 </div>
 

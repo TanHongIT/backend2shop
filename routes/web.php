@@ -15,7 +15,8 @@ use App\Slide;
 Route::get('/', function () {
     $slide = Slide::all();
     $products = Product::paginate(6);
-    return view ('.index',compact('products','slide'));
+    $product_sale=Product::where('product_promotion_pricre','<>',0)->paginate(3);
+    return view ('.index',compact('products','slide','product_sale'));
 });
 
 Route::resource('/product', 'ProductController')->middleware('admin');
