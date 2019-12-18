@@ -44,7 +44,13 @@ Route::get('/about',[
     'as' => 'about',
     'uses' => 'CustomerController@getAbout'
 ]);
-Route::get('dat-hang',[
+Route::resource('/users', 'ProfileController');
+
+Route::post('dat-hang',[
     'as' => 'dathang',
+    'uses' => 'CustomerController@postCheckout'
+]);
+Route::get('dat-hang2',[
+    'as' => 'dathang2',
     'uses' => 'CustomerController@postCheckout'
 ]);

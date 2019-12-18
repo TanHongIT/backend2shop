@@ -28,7 +28,7 @@
         <div class="collapse show" id="laravelExample">
           <ul class="nav">
             <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('product.create') }}">
+              <a class="nav-link" href="{{url('/')}}/users">
                 <span class="sidebar-mini"> UP </span>
                 <span class="sidebar-normal">{{ __('My profile') }} </span>
               </a>
