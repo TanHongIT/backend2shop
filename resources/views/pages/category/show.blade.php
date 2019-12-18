@@ -29,7 +29,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                     {{-- add giỏ hàng --}}
                     <p class="card-text">Giá Cũ {{ $item->product_price}}VNĐ <br>
-                        Giá Mới {{ $item->product_promotion_pricre}} VNĐ
+                        Sale {{ $item->product_promotion_pricre}} VNĐ
                     </p>
                     <form method="POST" action="{{route('cart.add')}}" class="form-inline my-2 my-lg-0" >
                         @csrf

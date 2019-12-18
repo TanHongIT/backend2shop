@@ -11,9 +11,11 @@
 |
 */
 use App\Product;
+use App\Slide;
 Route::get('/', function () {
+    $slide = Slide::all();
     $products = Product::paginate(6);
-    return view ('.index',compact('products'));
+    return view ('.index',compact('products','slide'));
 });
 
 Route::resource('/product', 'ProductController')->middleware('admin');
@@ -33,13 +35,13 @@ Route::resource('/category', 'CategoryController');
 Route::post('/cart-add', 'CartController@add')->name('cart.add');
 Route::get('/cart-checkout', 'CartController@cart')->name('cart.checkout');
 Route::post('/cart-clear', 'CartController@clear')->name('cart.clear');
-Route::get('/contact','HomeController@getContact')->name('contact');
+Route::get('/contact','CustomerController@getContact')->name('contact');
 //cach 1
 // Route::get('/about','HomeController@getAbout')->name('about');
 //cach 2
 Route::get('/about',[
     'as' => 'about',
-    'uses' => 'HomeController@getAbout'
+    'uses' => 'CustomerController@getAbout'
 ]);
 
 Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');

@@ -134,7 +134,7 @@
 		<div class="header-body">
 			<div class="container beta-relative">
 				<div class="pull-left">
-					trong file default =]]]z tự vào xóa
+					thích tự xoá ko, đá m giờ
 				<h1><a href="{{ url('') }}" id="logo"><img src="assets/dest/images/logo-cake.png" width="200px" alt="">T2T Team From Back-End 2 With Love </a></h1><br>
 				</div>
 				<div class="pull-right beta-components space-left ov">
@@ -147,13 +147,22 @@
 					</div>
 
 					<div class="beta-comp">
+						<div class="cart">
+							<div class="cartinfo"><a href="{{route('cart.checkout')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng <b>{{Cart::getTotalQuantity()}}</b></a></div></div>
+							{{-- <a class="btn btn-success btn-sm ml-3" href="{{route('cart.checkout')}}">
+								<i class="fa fa-shopping-cart"></i> Cart Total Qty
+								<span class="badge badge-light">{{Cart::getTotalQuantity()}}</span>
+							</a> --}}
+						
+					</div>
+					{{-- <div class="beta-comp">
 						
 							<a class="btn btn-success btn-sm ml-3" href="{{route('cart.checkout')}}">
 								<i class="fa fa-shopping-cart"></i> Cart Total Qty
 								<span class="badge badge-light">{{Cart::getTotalQuantity()}}</span>
 							</a>
 						
-					</div>
+					</div> --}}
 				</div>
 				<div class="clearfix"></div>
 			</div> <!-- .container -->
@@ -165,14 +174,14 @@
 				<nav class="main-menu">
 					<ul class="l-inline ov">
 						@foreach ($parentCategories as $category)
-							<li class="nav-item dropdown">
+							<li>
 							@php
 								$txtDropdown = 'class="nav-link"';
 								$isDropdown = false;
 								if(count($category->subcategories))
 								{
 									$isDropdown = true;
-									$txtDropdown = 'class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"';
+									$txtDropdown = 'role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"';
 								}
 							@endphp
 							
@@ -191,36 +200,6 @@
 		</div> <!-- .header-bottom -->
 	</div> <!-- #header -->
 	<br>
-	<div class="rev-slider">
-	<div class="fullwidthbanner-container">
-					<div class="fullwidthbanner">
-						<div class="bannercontainer" >
-					    <div class="banner" >
-								<ul>
-									<!-- THE FIRST SLIDE -->
-								<li data-transition="boxfade" data-slotamount="20" class="active-revslide" style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0;">
-						          <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-												<div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="{{ asset('storage/images/Laptop-Banner-2.png') }}" data-src="{{ asset('storage/images/Laptop-Banner-2.png') }}" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('{{ asset('storage/images/Laptop-Banner-2.png') }}'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
-											</div>
-											</div>
-								</li>
-								<li data-transition="boxfade" data-slotamount="20" class="active-revslide current-sr-slide-visible" style="width: 100%; height: 100%; overflow: hidden; visibility: inherit; opacity: 1; z-index: 20;">
-						            <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-													<div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="{{ asset('storage/images/Laptop-Banner-4.png') }}" data-src="{{ asset('storage/images/Laptop-Banner-4.png') }}" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('{{ asset('storage/images/Laptop-Banner-4.png') }}'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
-												</div>
-											</div>
-
-						        </li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="tp-bannertimer"></div>
-					</div>
-				</div>
-				<!--slider-->
-	</div>
-
 	{{-- main --}}
 	<main role="main">
         @include('layouts.partials.messages')
@@ -282,10 +261,11 @@
 				document.write(new Date().getFullYear())
 			  </script></p>
 			<p class="pull-right pay-options">
-				<a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a>
+				{{-- <a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a>
 				<a href="#"><img src="source/assets/dest/images/pay/pay.jpg" alt="" /></a>
 				<a href="#"><img src="source/assets/dest/images/pay/visa.jpg" alt="" /></a>
-				<a href="#"><img src="source/assets/dest/images/pay/paypal.jpg" alt="" /></a>
+				<a href="#"><img src="source/assets/dest/images/pay/paypal.jpg" alt="" /></a> --}}
+				<a href="https://tanhongit.net/" target="_blank">T2T Team</a> for a better web.
 			</p>
 			<div class="clearfix"></div>
 		</div> <!-- .container -->

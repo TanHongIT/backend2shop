@@ -10,4 +10,10 @@ class CustomerController extends Controller
     {
         return view('pages.customer.dashboard');
     }
+    public function getContact(){
+        return view('pages.contact');
+    }
+    public function getAbout(){
+        return view('pages.about');
+    }
 }
