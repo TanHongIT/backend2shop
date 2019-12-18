@@ -28,13 +28,13 @@
         <div class="collapse show" id="laravelExample">
           <ul class="nav">
             <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('profile.edit') }}">
+              <a class="nav-link" href="{{ route('product.create') }}">
                 <span class="sidebar-mini"> UP </span>
                 <span class="sidebar-normal">{{ __('My profile') }} </span>
               </a>
             </li>
             <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('user.index') }}">
+              <a class="nav-link" href="{{ route('product.create') }}">
                 <span class="sidebar-mini"> UM </span>
                 <span class="sidebar-normal"> {{ __('User Management') }} </span>
               </a>

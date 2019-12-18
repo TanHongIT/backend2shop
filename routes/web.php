@@ -48,6 +48,3 @@ Route::post('dat-hang',[
     'as' => 'dathang',
     'uses' => 'CustomerController@postCheckout'
 ]);
-
-Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
-Route::get('user', 'UserController@index')->name('user.index');

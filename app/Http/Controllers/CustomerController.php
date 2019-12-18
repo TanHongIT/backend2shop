@@ -34,5 +34,6 @@ class CustomerController extends Controller
         $bill->id_customer = $customer->id;
         $bill->date_order = date('Y-m-d');
         $bill->total = Cart::getSubTotal();
+        $bill->payment = $req->paymentMethod;
     }
 }
