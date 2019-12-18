@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    Go to <a href="{{url('/')}}">Home</a>
                 </div>
             </div>
         </div>
