@@ -58,7 +58,7 @@ class ProductController extends Controller
         //3 Luu
         $product->save();
         $product->categories()->attach($request->category_id);
-        return redirect('/product')->with('success', 'Product added.');
+        return redirect('/admin')->with('success', 'Product added.');
     }
 
     /**
@@ -114,7 +114,7 @@ class ProductController extends Controller
 
         //3 Luu
         $product->save();
-        return redirect('/product')->with('success', 'Product updated.');
+        return redirect('/admin')->with('success', 'Product updated.');
     }
 
     /**
@@ -127,7 +127,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $product->delete();
-        return redirect('/product')->with('success', 'Deleted.');
+        return redirect('/admin')->with('success', 'Deleted.');
     }
 
     public function productAjax($id)
