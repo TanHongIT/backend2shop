@@ -1,7 +1,11 @@
 @extends('layouts.default')
 
 @section('content')
-
+<style>
+    .muahang .btn:hover{
+        background-color: #9c27b0;
+        color: #fff;
+    }</style>
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
@@ -9,7 +13,7 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-                <a href="index.html">Home</a> / <span>Product</span>
+            <a href="{{url('/')}}">Home</a> / <span>Product</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -46,11 +50,13 @@
                         <div class="space20">&nbsp;</div>
 
                         <div class="single-item-options">
-                            <form method="POST" action="{{route('cart.add')}}" class="form-inline my-2 my-lg-0" >
-                                @csrf
-                                <input name="id" type="hidden" value="{{ $item->id }}">
-                                <button class="btn btn-success btn-block" type="submit">Add to cart</button>
-                            </form>
+                            <div class="muahang" style="text-align:center">
+                                <form method="POST" action="{{route('cart.add')}}" class="form-inline my-2 my-lg-0" >
+                                    @csrf
+                                    <input name="id" type="hidden" value="{{ $item->id }}">
+                                    <button class="btn " type="submit"><i class="fa fa-cart-plus"></i> Mua ngay</button>
+                                </form>
+                              </div>
                         </div>
                     </div>
                 </div><br><br>
@@ -62,8 +68,9 @@
                             <textarea name="comment_content" id="comment_content" class="form-control"></textarea>
                             <input type="hidden" name="product_id" value="{{ $item->id }}">
                             <br>
-                            <button type="submit" class="btn btn-success">Gửi comment</button>
-                            
+                            <div class="muahang">
+                            <button type="submit" class="btn">Gửi comment</button>
+                            </div>
                         </div>
                     </form>
                 </div>

@@ -4,7 +4,11 @@
 
 
 @section('content')
-
+<style>
+  .muahang .btn:hover{
+      background-color: #9c27b0;
+      color: #fff;
+  }</style>
 <div class="album py-5 bg-light">
     <div class="container">
 
@@ -34,11 +38,14 @@
                         <p class="card-text"> <strike> Giá {{ $item->product_price}}VNĐ</strike></p> <br>
                         <h6 class="card-text"> Sale {{ $item->product_promotion_pricre}} VNĐ</h6>
                         @endif
-                    <form method="POST" action="{{route('cart.add')}}" class="form-inline my-2 my-lg-0" >
-                        @csrf
-                        <input name="id" type="hidden" value="{{ $item->id }}">
-                        <button class="btn btn-success btn-block" type="submit">Add to cart</button>
-                    </form>
+                        <div class="muahang" style="text-align:center">
+                          <form method="POST" action="{{route('cart.add')}}" class="form-inline my-2 my-lg-0" >
+                              @csrf
+                              <input name="id" type="hidden" value="{{ $item->id }}">
+                              <button class="btn " type="submit"><i class="fa fa-cart-plus"></i> Mua ngay</button>
+                          </form>
+                        </div>
+                    
                     </div>
                 </div>
                 </div>

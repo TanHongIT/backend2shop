@@ -2,6 +2,11 @@
 
 
 @section('content')
+<style>
+  .muahang .btn:hover{
+      background-color: #9c27b0;
+      color: #fff;
+  }</style>
 <div class="rev-slider">
 	<div class="fullwidthbanner-container">
 					<div class="fullwidthbanner">
@@ -59,11 +64,13 @@
                         @endif
                       <br>
                       {{-- add giỏ hàng --}}
+                      <div class="muahang" style="text-align:center">
                       <form method="POST" action="{{route('cart.add')}}" class="form-inline my-2 my-lg-0" >
                           @csrf
                           <input name="id" type="hidden" value="{{ $item->id }}">
-                          <button class="btn btn-success btn-block" type="submit">Add to cart</button>
+                          <button class="btn " type="submit"><i class="fa fa-cart-plus"></i> Mua ngay</button>
                       </form>
+                    </div>
                       </div>
                   </div>
                   </div>
@@ -97,11 +104,13 @@
                         @endif
                       <br>
                       {{-- add giỏ hàng --}}
-                      <form method="POST" action="{{route('cart.add')}}" class="form-inline my-2 my-lg-0" >
-                          @csrf
-                          <input name="id" type="hidden" value="{{ $item->id }}">
-                          <button class="btn btn-success btn-block" type="submit">Add to cart</button>
-                      </form>
+                      <div class="muahang" style="text-align:center">
+                        <form method="POST" action="{{route('cart.add')}}" class="form-inline my-2 my-lg-0" >
+                            @csrf
+                            <input name="id" type="hidden" value="{{ $item->id }}">
+                            <button class="btn " type="submit"><i class="fa fa-cart-plus"></i> Mua ngay</button>
+                        </form>
+                      </div>
                       </div>
                   </div>
                   </div>
