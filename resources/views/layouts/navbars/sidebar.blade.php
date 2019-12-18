@@ -6,7 +6,7 @@
   -->
   {{$activePage = ""}}
   <div class="logo">
-    <a href="#" class="simple-text logo-normal">
+    <a href="{{ route('admin') }}" class="simple-text logo-normal">
       {{ __('T2T Shop') }}
     </a>
   </div>

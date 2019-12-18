@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th12 15, 2019 lúc 03:47 AM
+-- Thời gian đã tạo: Th12 18, 2019 lúc 03:32 AM
 -- Phiên bản máy phục vụ: 5.7.26
 -- Phiên bản PHP: 7.2.18
 
@@ -329,11 +329,21 @@ INSERT INTO `products` (`id`, `product_name`, `product_price`, `product_descript
 
 DROP TABLE IF EXISTS `slide`;
 CREATE TABLE IF NOT EXISTS `slide` (
-  `slide_id` int(11) NOT NULL AUTO_INCREMENT,
-  `slide_link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slide_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`slide_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` varchar(100) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `slide`
+--
+
+INSERT INTO `slide` (`id`, `link`, `image`) VALUES
+(1, '', 'banner1.jpg'),
+(2, '', 'banner2.jpg'),
+(3, '', 'banner3.jpg'),
+(4, '', 'banner4.jpg');
 
 -- --------------------------------------------------------
 
