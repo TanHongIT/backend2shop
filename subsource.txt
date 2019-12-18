@@ -11,3 +11,9 @@
     php artisan make:model BillDetail
     php artisan make:model News
     php artisan make:model Slide
+
+
+
+tạo xác thực emdil khi dăng ký 1 user mới : https://www.itsolutionstuff.com/post/laravel-58-email-verification-exampleexample.html
+
+user manager: https://github.com/jeremykenedy/laravel-users

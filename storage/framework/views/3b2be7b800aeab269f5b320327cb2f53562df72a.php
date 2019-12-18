@@ -33,7 +33,7 @@
           </a>
         </li>
         <li class="nav-item ">
-          <a href="<?php echo e(route('product.create')); ?>" class="nav-link">
+          <a href="<?php echo e(url('/')); ?>/users" class="nav-link">
             <i class="material-icons">face</i> <?php echo e(__('Profile')); ?>
 
           </a>

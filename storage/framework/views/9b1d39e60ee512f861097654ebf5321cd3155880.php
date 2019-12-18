@@ -23,7 +23,7 @@
       <li class="nav-item <?php echo e(($activePage == 'profile' || $activePage == 'user-management') ? ' active' : ''); ?>">
         <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
           <i><img style="width:25px" src="<?php echo e(asset('assets/img/laravel.svg')); ?>"></i>
-          <p><?php echo e(__('Users')); ?>
+          <p><?php echo e(__('Cuustomer')); ?>
 
             <b class="caret"></b>
           </p>
@@ -31,9 +31,9 @@
         <div class="collapse show" id="laravelExample">
           <ul class="nav">
             <li class="nav-item<?php echo e($activePage == 'profile' ? ' active' : ''); ?>">
-              <a class="nav-link" href="<?php echo e(url('/')); ?>/users">
+              <a class="nav-link" href="<?php echo e(url('/')); ?>/users1">
                 <span class="sidebar-mini"> MP </span>
-                <span class="sidebar-normal"><?php echo e(__('My profile')); ?> </span>
+                <span class="sidebar-normal"><?php echo e(__('Your Profile')); ?> </span>
               </a>
             </li>
             <li class="nav-item<?php echo e($activePage == 'profile' ? ' active' : ''); ?>">
@@ -42,8 +42,27 @@
                 <span class="sidebar-normal"><?php echo e(__('Change PassWord')); ?> </span>
               </a>
             </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item <?php echo e(($activePage == 'profile' || $activePage == 'user-management') ? ' active' : ''); ?>">
+        <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
+          <i><img style="width:25px" src="<?php echo e(asset('assets/img/laravel.svg')); ?>"></i>
+          <p><?php echo e(__('User Management')); ?>
+
+            <b class="caret"></b>
+          </p>
+        </a>
+        <div class="collapse show" id="laravelExample">
+          <ul class="nav">
+            <li class="nav-item<?php echo e($activePage == 'profile' ? ' active' : ''); ?>">
+              <a class="nav-link" href="<?php echo e(route('users.create')); ?>">
+                <span class="sidebar-mini"> MP </span>
+                <span class="sidebar-normal"><?php echo e(__('Create New User')); ?> </span>
+              </a>
+            </li>
             <li class="nav-item<?php echo e($activePage == 'user-management' ? ' active' : ''); ?>">
-              <a class="nav-link" href="<?php echo e(route('product.create')); ?>">
+              <a class="nav-link" href="<?php echo e(route('users')); ?>">
                 <span class="sidebar-mini"> UM </span>
                 <span class="sidebar-normal"> <?php echo e(__('User Management')); ?> </span>
               </a>
