@@ -19,8 +19,6 @@
 <div class="container">
     <div id="content">
         <div class="row">
-           
-
                 <div class="row">
                     <div class="col-sm-4">
                         <img src="{{ asset('storage/images/' . $item->product_image) }}" alt="">

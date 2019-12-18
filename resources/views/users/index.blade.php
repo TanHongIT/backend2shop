@@ -71,11 +71,11 @@
                                       <div class="ripple-container"></div>
                                   </button>
                               </form>
-                            @else
+                            {{-- @else
                               <a rel="tooltip" class="btn btn-success btn-link" href="{{ route('profile.edit') }}" data-original-title="" title="">
                                 <i class="material-icons">edit</i>
                                 <div class="ripple-container"></div>
-                              </a>
+                              </a> --}}
                             @endif
                           </td>
                         </tr>
