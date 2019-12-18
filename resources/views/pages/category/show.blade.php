@@ -28,9 +28,12 @@
                     <p class="card-text">{{ mb_substr($item->product_description,0, 100) }}</p>
                     <div class="d-flex justify-content-between align-items-center">
                     {{-- add giỏ hàng --}}
-                    <p class="card-text">Giá Cũ {{ $item->product_price}}VNĐ <br>
-                        Sale {{ $item->product_promotion_pricre}} VNĐ
-                    </p>
+                    @if($item->product_promotion_pricre==0)
+                        <h6 class="card-text">Giá {{ $item->product_price}}VNĐ</h6> <br>
+                        @else
+                        <p class="card-text"> <strike> Giá {{ $item->product_price}}VNĐ</strike></p> <br>
+                        <h6 class="card-text"> Sale {{ $item->product_promotion_pricre}} VNĐ</h6>
+                        @endif
                     <form method="POST" action="{{route('cart.add')}}" class="form-inline my-2 my-lg-0" >
                         @csrf
                         <input name="id" type="hidden" value="{{ $item->id }}">

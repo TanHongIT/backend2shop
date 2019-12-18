@@ -11,8 +11,12 @@
             
             <h1>{{ $item->product_name }}</h1>
 
-            <h5>Giá Cũ {{ $item->product_price }} vnđ</h5>
-            <h4>Giá Mới {{ $item->product_promotion_pricre }} vnđ</h4>
+            @if($item->product_promotion_pricre==0)
+                        <h6 class="card-text">Giá {{ $item->product_price}}VNĐ</h6> <br>
+                        @else
+                        <p class="card-text"> <strike> Giá {{ $item->product_price}}VNĐ</strike></p> <br>
+                        <h6 class="card-text"> Sale {{ $item->product_promotion_pricre}} VNĐ</h6>
+                        @endif
             <p>{{ $item->product_description }}</p>
 
             <ul>
