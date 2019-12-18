@@ -44,7 +44,12 @@ Route::get('/about',[
     'as' => 'about',
     'uses' => 'CustomerController@getAbout'
 ]);
+
+//https://stackoverflow.com/questions/57670693/laravel-5-8-create-update-users-profile
 Route::resource('/users', 'ProfileController');
+//https://www.itsolutionstuff.com/post/laravel-change-password-with-current-password-validation-exampleexample.html
+Route::get('changepassword', 'ChangePasswordController@index');
+Route::post('changepassword', 'ChangePasswordController@store')->name('change.password');
 
 Route::post('dat-hang',[
     'as' => 'dathang',
