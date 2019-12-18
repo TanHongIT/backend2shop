@@ -35,9 +35,10 @@
         @endif
         <div class="beta-products-list">
           <br><br>
-          <h2>Tổng Hợp Sản Phẩm</h2>
+          <h2>Tổng Hợp Sản Phẩm</h2> <br>
+          Tìm Thấy {{count($products)}} Sản Phẩm Trong Trang
           <div class="row">
-            Tìm Thấy {{count($products)}} Sản Phẩm Trong Trang
+            
               @foreach($products as $item)
               
               <div class="col-md-4">
