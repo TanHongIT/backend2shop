@@ -3,22 +3,22 @@
         <nav class="float-left">
             <ul>
               <li>
-                <a href="#">
+                <a href="{{url('/')}}">
                     {{ __('T2T') }}
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="{{route('about')}}">
                     {{ __('About Us') }}
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="https://tanhongit.net/">
                     {{ __('Blog') }}
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="https://tanhongit.net/">
                     {{ __('Licenses') }}
                 </a>
               </li>
