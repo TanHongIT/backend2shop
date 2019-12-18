@@ -17,6 +17,7 @@
         
     </div>
       <a href="{{ route('product.create') }}" class="btn btn-primary">Tạo Sản Phẩm Mới</a> <br><br>
+      <a href="{{ url('/category') }}" class="btn btn-primary">Tạo Danh Mục Mới</a> <br><br>
         @if (session()->get('success'))
         <div class="alert alert-success">
             {{ session()->get('success') }}

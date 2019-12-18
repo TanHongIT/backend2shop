@@ -30,7 +30,7 @@ Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin'
 Route::get('/customer', 'CustomerController@index')->name('customer')->middleware('customer');
 
 Route::resource('/comment', 'CommentController');
-Route::resource('/category', 'CategoryController');
+Route::resource('/category', 'CategoryController')->middleware('admin');
 
 
 Route::post('/cart-add', 'CartController@add')->name('cart.add');
@@ -44,18 +44,7 @@ Route::get('/about',[
     'as' => 'about',
     'uses' => 'CustomerController@getAbout'
 ]);
-
-//https://stackoverflow.com/questions/57670693/laravel-5-8-create-update-users-profile
-Route::resource('/users', 'ProfileController');
-//https://www.itsolutionstuff.com/post/laravel-change-password-with-current-password-validation-exampleexample.html
-Route::get('changepassword', 'ChangePasswordController@index');
-Route::post('changepassword', 'ChangePasswordController@store')->name('change.password');
-
-Route::post('dat-hang',[
+Route::get('dat-hang',[
     'as' => 'dathang',
-    'uses' => 'CustomerController@postCheckout'
-]);
-Route::get('dat-hang2',[
-    'as' => 'dathang2',
     'uses' => 'CustomerController@postCheckout'
 ]);
