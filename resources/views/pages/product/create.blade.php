@@ -22,19 +22,19 @@
         {{-- tránh giả mạo yêu cầu giữa các trang web --}}
         @csrf
         <div class="form-group">
-            <input type="text" name="product_name" id="product_name" class="form-control" placeholder="Product Name">
+            Name: <input type="text" name="product_name" id="product_name" class="form-control" placeholder="Product Name">
         </div>
         <div class="form-group">
-            <input type="text" name="product_price" id="product_price" class="form-control" placeholder="Product Price">
+            Price: <input type="text" name="product_price" id="product_price" class="form-control" placeholder="Product Price">
         </div>
         <div class="form-group">
-            <input type="text" name="product_promotion_pricre" id="product_promotion_pricre" class="form-control" placeholder="Product Promotion Price">
+            Promotion: <input type="text" name="product_promotion_pricre" id="product_promotion_pricre" class="form-control" placeholder="Product Promotion Price">
         </div>
         <div class="form-group">
-            <textarea type="text" name="product_description" id="product_description" class="form-control" placeholder="Product Description"></textarea>
+            Description: <textarea type="text" name="product_description" id="product_description" class="form-control" placeholder="Product Description"></textarea>
         </div>
         <div class="form-group">
-            <input type="file" name="product_image" id="product_image" class="form-control" placeholder="Product Image">
+            Select Picture: <input type="file" name="product_image" id="product_image" class="form-control" placeholder="Product Image">
         </div>
 
             @foreach ($categories as $category)
