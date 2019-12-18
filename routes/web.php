@@ -44,7 +44,7 @@ Route::get('/about',[
     'as' => 'about',
     'uses' => 'CustomerController@getAbout'
 ]);
-Route::get('dat-hang2',[
-    'as' => 'dathang2',
+Route::get('dat-hang',[
+    'as' => 'dathang',
     'uses' => 'CustomerController@postCheckout'
 ]);
