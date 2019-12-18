@@ -134,7 +134,6 @@
 		<div class="header-body">
 			<div class="container beta-relative">
 				<div class="pull-left">
-					thích tự xoá ko, đá m giờ
 				<h1><a href="{{ url('') }}" id="logo"><img src="assets/dest/images/logo-cake.png" width="200px" alt="">T2T Team From Back-End 2 With Love </a></h1><br>
 				</div>
 				<div class="pull-right beta-components space-left ov">
@@ -214,7 +213,6 @@
 				<div class="col-sm-3">
 					<div class="widget">
 						<h4 class="widget-title" style='text-align:center'>T2T Shop</h4>
-						<div id="beta-instagram-feed"><div></div></div>
 					</div>
 				</div>
 				<div class="col-sm-2">
