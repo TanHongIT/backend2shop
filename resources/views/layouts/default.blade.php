@@ -284,7 +284,7 @@
 	<script src="source/assets/dest/js/waypoints.min.js"></script>
 	<script src="source/assets/dest/js/wow.min.js"></script>
 <!-- scroll to top -->
-<script src="{{ asset('asstes/js/scrip.js')}}"></script>
+<script src="asstes/js/scrip.js"></script>
 	<!--customjs-->
 	<script src="source/assets/dest/js/custom2.js"></script>
 	<script>

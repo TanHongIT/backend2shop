@@ -1,9 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.default')
 
 @section('content')
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <div class="container">
-    <h1>Add a Product</h1>
-{{-- xuất thông báo add thành công / thất bại --}}
+    <h1>Add a Product</h1> <br>
+    <br>
+    {{-- xuất thông báo add thành công / thất bại --}}
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -35,18 +37,23 @@
             <input type="file" name="product_image" id="product_image" class="form-control" placeholder="Product Image">
         </div>
 
-        <div class="form-group">
             @foreach ($categories as $category)
-            <div class="form-check">
-                    <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="category_id[]" id="category_id" value="{{$category->id}}">
-                      {{$category->category_name}}
+                <div class="checkbox">                        
+                    <label>
+                        <input type="checkbox" name="category_id[]" id="category_id" value="{{$category->id}}">
+                            {{$category->category_name}}
                     </label>
-                  </div>
+                </div>
             @endforeach
             
-        </div>
+
+        
         <button type="submit" class="btn btn-primary">Add</button>
+        <br>
+        <br>
+        <br>
     </form>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 @endsection
