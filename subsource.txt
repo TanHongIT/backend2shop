@@ -20,3 +20,8 @@ user manager: https://github.com/jeremykenedy/laravel-users
 
 
 php artisan storage:link
+
+info admin: 
+   tan@gmail.com
+   123456789
+
