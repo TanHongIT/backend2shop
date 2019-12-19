@@ -25,3 +25,16 @@ info admin:
    tan@gmail.com
    123456789
 
+tổng kết v1
+not done:
+   catefory manager
+   BillDetail
+   save info billdetail in database 
+   search
+   slide manager 
+   edit product -> image
+   show product -> desc
+   cart not get sale price 
+   total view -> database
+   sau khi nhấn đặt hàng sẽ ra 1 trang hiện hoá đơn hỏi có in hay không
+   show product related
