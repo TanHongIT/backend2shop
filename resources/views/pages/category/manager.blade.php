@@ -21,14 +21,14 @@
                 <div class="card-body">
                 <p>ID Category: {{$item->id}}</p>
                 <p>Name: {{$item->category_name}}</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                    <a href="{{ route('categorymanager.edit', $item->id) }}" class="btn btn-primary">Edit</a>
-                    <form action="{{ route('categorymanager.destroy', $item->id) }}" method="post" onsubmit="return confirm('Delete?')">
+                    {{-- <div class="d-flex justify-content-between align-items-center">
+                    <a href="{{ route('categorymanagement.edit', $item->id) }}" class="btn btn-primary">Edit</a>
+                    <form action="{{ route('categorymanagement.destroy', $item->id) }}" method="post" onsubmit="return confirm('Delete?')">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
-                    </div>
+                    </div> --}}
                 </div>
                 </div>
             </div>

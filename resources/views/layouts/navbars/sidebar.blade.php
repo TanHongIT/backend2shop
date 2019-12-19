@@ -105,12 +105,7 @@
                 <span class="sidebar-normal">{{ __('Create New') }} </span>
               </a>
             </li>
-            <li class="nav-item{{ $activePage == 'product' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('admin') }}">
-                <span class="sidebar-mini"> PM </span>
-                <span class="sidebar-normal"> {{ __('Category Management') }} </span>
-              </a>
-            </li>
+            
           </ul>
         </div>
       </li>
