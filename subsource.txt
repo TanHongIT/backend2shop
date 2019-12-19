@@ -1,0 +1,22 @@
+ add cart for website
+    loi khi cai dat cart: https://github.com/rackspace/php-opencloud/issues/250
+
+    install cart by darryldecode:https://kode-blog.io/laravel-5-shopping-cart
+
+
+
+ 1.   taoj model cho cac bang
+    php artisan make:model Customer
+    php artisan make:model Bill
+    php artisan make:model BillDetail
+    php artisan make:model News
+    php artisan make:model Slide
+
+
+
+tạo xác thực emdil khi dăng ký 1 user mới : https://www.itsolutionstuff.com/post/laravel-58-email-verification-exampleexample.html
+
+user manager: https://github.com/jeremykenedy/laravel-users
+
+
+php artisan storage:link
