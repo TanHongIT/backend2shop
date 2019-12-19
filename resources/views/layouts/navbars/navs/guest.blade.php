@@ -29,7 +29,7 @@
           </a>
         </li>
         <li class="nav-item ">
-          <a href="{{ route('product.create') }}" class="nav-link">
+          <a href="{{url('/')}}/users" class="nav-link">
             <i class="material-icons">face</i> {{ __('Profile') }}
           </a>
         </li>

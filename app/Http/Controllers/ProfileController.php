@@ -15,7 +15,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('users.edit');
+        return view('usersmanagement.users.edit');
     }
     // public function edit()
     // {
@@ -34,7 +34,7 @@ class ProfileController extends Controller
         $user->name = $request->get('name');
         $user->email = $request->get('email');
         $user->save();
-        return redirect('users')->with('status', 'Profile updated!');
+        return redirect('users1')->with('status', 'Profile updated!');
     }
 
     // /**

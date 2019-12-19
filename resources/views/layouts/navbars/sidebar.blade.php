@@ -21,16 +21,16 @@
       <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
           <i><img style="width:25px" src="{{ asset('assets/img/laravel.svg') }}"></i>
-          <p>{{ __('Users') }}
+          <p>{{ __('Cuustomer') }}
             <b class="caret"></b>
           </p>
         </a>
         <div class="collapse show" id="laravelExample">
           <ul class="nav">
             <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
-              <a class="nav-link" href="{{url('/')}}/users">
+              <a class="nav-link" href="{{url('/')}}/users1">
                 <span class="sidebar-mini"> MP </span>
-                <span class="sidebar-normal">{{ __('My profile') }} </span>
+                <span class="sidebar-normal">{{ __('Your Profile') }} </span>
               </a>
             </li>
             <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
@@ -39,8 +39,26 @@
                 <span class="sidebar-normal">{{ __('Change PassWord') }} </span>
               </a>
             </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
+        <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
+          <i><img style="width:25px" src="{{ asset('assets/img/laravel.svg') }}"></i>
+          <p>{{ __('User Management') }}
+            <b class="caret"></b>
+          </p>
+        </a>
+        <div class="collapse show" id="laravelExample">
+          <ul class="nav">
+            <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
+              <a class="nav-link" href="{{route('users.create')}}">
+                <span class="sidebar-mini"> MP </span>
+                <span class="sidebar-normal">{{ __('Create New User') }} </span>
+              </a>
+            </li>
             <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('product.create') }}">
+              <a class="nav-link" href="{{ route('users') }}">
                 <span class="sidebar-mini"> UM </span>
                 <span class="sidebar-normal"> {{ __('User Management') }} </span>
               </a>

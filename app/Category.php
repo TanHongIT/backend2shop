@@ -10,7 +10,7 @@ class Category extends Model
     {
         return $this->belongsToMany('App\Product');
     }
-
+    protected $fillable = ['parent_id', 'name'];
     public function subcategories()
     {
         return $this->hasMany('App\Category', 'parent_id');
