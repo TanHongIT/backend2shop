@@ -8,6 +8,7 @@ class CategoryManagerController extends Controller
 {
     public function index()
     {
+        return view('pages.category.manager.index');
     }
     public function show($id)
     {

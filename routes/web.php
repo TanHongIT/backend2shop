@@ -76,6 +76,8 @@ Route::middleware(['web', 'auth'])->group(function () {
 
 Route::resource('/categorymanagement', 'CategoryController')->middleware('admin');
 
+Route::resource('/categorymanager', 'CategoryManagerController')->middleware('admin');
+
 Route::post('dat-hang',[
     'as' => 'dathang',
     'uses' => 'CustomerController@postCheckout'
