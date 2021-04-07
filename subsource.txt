@@ -17,3 +17,24 @@
 tạo xác thực emdil khi dăng ký 1 user mới : https://www.itsolutionstuff.com/post/laravel-58-email-verification-exampleexample.html
 
 user manager: https://github.com/jeremykenedy/laravel-users
+
+
+php artisan storage:link
+
+info admin: 
+   tan@gmail.com
+   123456789
+
+tổng kết v1
+not done:
+   catefory manager
+   BillDetail
+   save info billdetail in database 
+   search
+   slide manager 
+   edit product -> image
+   show product -> desc
+   cart not get sale price 
+   total view -> database
+   sau khi nhấn đặt hàng sẽ ra 1 trang hiện hoá đơn hỏi có in hay không
+   show product related

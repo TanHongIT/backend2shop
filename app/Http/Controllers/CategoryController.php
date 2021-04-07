@@ -24,7 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.category.create');
     }
 
     /**
@@ -35,7 +35,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'category_name' => 'required',
+            'parent_id' => 'required',
+        ]);
+
+        $category = new Category([
+            'category_name' => $request->get('category_name'),
+            'parent_id' => $request->get('parent_id'),
+        ]);
+        $category->save();
+        return redirect('/admin')->with('success', 'Category added.');
     }
 
     /**
@@ -81,6 +91,14 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+        return redirect('/categorymanagement')->with('success', 'Deleted.');
+    }
+
+    public function productAjax($id)
+    {
+        $category = Category::find($id);
+        return $category;
     }
 }

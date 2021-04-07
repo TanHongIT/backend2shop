@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th12 18, 2019 lúc 06:06 AM
+-- Thời gian đã tạo: Th12 19, 2019 lúc 03:38 AM
 -- Phiên bản máy phục vụ: 5.7.26
 -- Phiên bản PHP: 7.2.18
 
@@ -68,8 +68,8 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `parent_id` int(11) NOT NULL,
-  `categories_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `categories_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -77,21 +77,21 @@ CREATE TABLE IF NOT EXISTS `categories` (
 -- Đang đổ dữ liệu cho bảng `categories`
 --
 
-INSERT INTO `categories` (`id`, `category_name`, `parent_id`, `categories_description`, `categories_image`) VALUES
-(1, 'Máy tính bảng', 0, '', ''),
-(2, 'Điện thoại', 0, '', ''),
-(3, 'Apple', 0, '', ''),
-(4, 'iphone', 2, '', ''),
-(5, 'samsung', 2, '', ''),
-(6, 'iphone', 3, '', ''),
-(7, 'ipad', 3, '', ''),
-(8, 'Laptop', 0, '', ''),
-(9, 'Acer', 8, '', ''),
-(10, 'Asus', 8, '', ''),
-(11, 'Dell', 8, '', ''),
-(12, 'HP', 8, '', ''),
-(13, 'Lenovo', 8, '', ''),
-(14, 'MSI', 8, '', '');
+INSERT INTO `categories` (`id`, `category_name`, `parent_id`, `created_at`, `updated_at`) VALUES
+(1, 'Máy tính bảng', 0, NULL, NULL),
+(2, 'Điện thoại', 0, NULL, NULL),
+(3, 'Apple', 0, NULL, NULL),
+(4, 'iphone', 2, NULL, NULL),
+(5, 'samsung', 2, NULL, NULL),
+(6, 'iphone', 3, NULL, NULL),
+(7, 'ipad', 3, NULL, NULL),
+(8, 'Laptop', 0, NULL, NULL),
+(9, 'Acer', 8, NULL, NULL),
+(10, 'Asus', 8, NULL, NULL),
+(11, 'Dell', 8, NULL, NULL),
+(12, 'HP', 8, NULL, NULL),
+(13, 'Lenovo', 8, NULL, NULL),
+(14, 'MSI', 8, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -188,7 +188,10 @@ INSERT INTO `category_product` (`product_id`, `category_id`) VALUES
 (64, 4),
 (64, 6),
 (65, 5),
-(66, 5);
+(66, 5),
+(67, 14),
+(68, 1),
+(69, 7);
 
 -- --------------------------------------------------------
 
@@ -205,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `product_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `comment_product_id_foreign` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `comments`
@@ -213,7 +216,10 @@ CREATE TABLE IF NOT EXISTS `comments` (
 
 INSERT INTO `comments` (`id`, `created_at`, `updated_at`, `comment_content`, `product_id`) VALUES
 (1, '2019-11-22 17:52:16', '2019-11-22 17:52:16', 'thuan oc cho', 1),
-(2, '2019-11-22 17:58:32', '2019-11-22 17:58:32', 'tu cho is real', 1);
+(2, '2019-11-22 17:58:32', '2019-11-22 17:58:32', 'tu cho is real', 1),
+(3, '2019-12-18 06:02:25', '2019-12-18 06:02:25', 'hello', 40),
+(4, '2019-12-18 06:02:37', '2019-12-18 06:02:37', 'gơ are you', 40),
+(5, '2019-12-18 06:23:58', '2019-12-18 06:23:58', 'dfgzftrgfrt', 38);
 
 -- --------------------------------------------------------
 
@@ -285,6 +291,13 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
   KEY `password_resets_email_index` (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('tan@gmail.com', '$2y$10$UfnD16QTSuJA6QaqzpMAMuIwqCHpJGsdX4jUzbLjqefdFmihE7.r6', '2019-12-18 00:48:56');
+
 -- --------------------------------------------------------
 
 --
@@ -300,7 +313,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `product_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_promotion_pricre` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `products`
@@ -334,7 +347,8 @@ INSERT INTO `products` (`id`, `product_name`, `product_price`, `product_descript
 (63, 'Điện Thoại iPhone 7 Plus 32GB - Hàng Chính Hãng', '11990000.00', 'Thiết kế kim loại nguyên khối sang trọng\r\nĐiện Thoại iPhone 7 Plus 32GB - Hàng Chính Hãng FPT với kích thước 158.2 x 77.9 x 7.3 mm mỏng nhẹ và thiết kế tương tự như bộ đôi iPhone 6s/6s Plus, tuy nhiên phần dải nhựa bắt sóng không cắt ngang mặt lưng như phiên bản cũ mà được chuyển sang phần cạnh trên của sản phẩm. Phím Home vật lý trên điện thoại cũng được thay thế bằng phím cảm ứng nhờ vào sự kết hợp Taptic Engine mới và liên kết với 3D Touch tiện lợi và đẹp mắt.', 'iphone7plus.jpg', '0.00'),
 (64, 'Điện Thoại iPhone X 64GB VN/A - Hàng Chính Hãng', '20190000.00', 'Thiết kế lạ mắt không nút Home cứng\r\nĐiện Thoại iPhone X 64GB là chiếc điện thoại hoàn toàn mới của Apple vừa mới ra mắt tuần vừa qua. Trên cơ bản, iPhone X vẫn có những tính năng như những dòng iPhone khác nhưng thiết kế bên ngoài lạ mắt hơn, không trang bị nút Home cứng, viền kim loại sang trọng và đặc biệt là cụm camera sau được trang bị theo chiều dọc tạo điểm nhấn cho chiếc điện thoại.', 'iphonex.jpg', '0.00'),
 (65, 'Điện Thoại Samsung Galaxy A70 (128GB/6GB) - Hàng Chính Hãng', '7189000.00', 'Điện Thoại Samsung Galaxy A70 (128GB/6GB) - Hàng Chính Hãng (Đã Kích Hoạt) Bảo Hành 12 Tháng sản phẩm vẫn được làm bằng chất liệu nhựa giả thủy tinh nhưng là nhựa cao cấp với tên gọi 3D Graffitistic, mang đến sự cứng cáp và chắc chắn khi cầm nắm.\r\n\r\nBên cạnh đó, màu sắc trên lưng máy được trang bị thêm hiệu ứng lấp lánh nên khi nhìn theo góc nghiêng sẽ rất đẹp mắt. Đáng tiếc là A70 vẫn bị bám mồ hôi và dấu vân tay. Ngoài ra, viền bezel của máy cũng được làm rất mỏng, so với các máy thuộc dòng Galaxy A thì A70 là mỏng nhất.', 'SamsungGalaxyA70.jpg', '0.00'),
-(66, 'Điện thoại Samsung Galaxy M10 Ram 2GB 16GB - Hàng chính hãng', '2580000.00', 'Màn hình: PLS TFT LCD, 6.2\", HD+ • Hệ điều hành: Android 8.1 (Oreo) • Camera sau: Chính 13 MP & Phụ 5 MP • Camera trước: 5 MP • CPU: Exynos 7870 8 nhân 64-bit • RAM: 2 GB • Bộ nhớ trong: 16 GB • Thẻ nhớ: MicroSD • Thẻ SIM: 2 SIM Nano (SIM 2 chung khe thẻ nhớ) • Dung lượng pin: 3400 mAh', 'SamsungGalaxyM10.png', '0.00');
+(66, 'Điện thoại Samsung Galaxy M10 Ram 2GB 16GB - Hàng chính hãng', '2580000.00', 'Màn hình: PLS TFT LCD, 6.2\", HD+ • Hệ điều hành: Android 8.1 (Oreo) • Camera sau: Chính 13 MP & Phụ 5 MP • Camera trước: 5 MP • CPU: Exynos 7870 8 nhân 64-bit • RAM: 2 GB • Bộ nhớ trong: 16 GB • Thẻ nhớ: MicroSD • Thẻ SIM: 2 SIM Nano (SIM 2 chung khe thẻ nhớ) • Dung lượng pin: 3400 mAh', 'SamsungGalaxyM10.png', '0.00'),
+(68, 'RETRETEW', '243244.00', '<p>4T4EWRE T</p>', '5A3s8lG2cMUGRrCEnKjHBynDq5e13jR8ufdhNloc.png', '34254.00');
 
 -- --------------------------------------------------------
 
@@ -379,15 +393,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `role` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`) VALUES
-(1, 'tan', 'tan@gmail.com', NULL, '$2y$10$ylaYQJjBJEm6WiUz9Ny6nuXu7qVF7SbS0MBNIoCIhJ9TanYuupPIG', NULL, '2019-11-22 17:47:48', '2019-11-22 17:47:48', 1),
-(2, 'thuan', 'thuan@gmail.com', NULL, '$2y$10$g6WuFwBdMR.ezrr.YJxa.OB8QWbDIToJsgSe0zcGeJCPA2lHjH1HS', NULL, '2019-11-29 12:17:07', '2019-11-29 12:17:07', 1);
+(1, 'tan', 'tan@gmail.com', NULL, '$2y$10$FRrjbodpDnrUqp7NqVHS0Opmm1iiGf6m8tRmQbQeO0P1W2.gSZD1G', NULL, '2019-11-22 17:47:48', '2019-12-18 09:05:23', 1),
+(2, 'thuan', 'thuan@gmail.com', NULL, '$2y$10$g6WuFwBdMR.ezrr.YJxa.OB8QWbDIToJsgSe0zcGeJCPA2lHjH1HS', NULL, '2019-11-29 12:17:07', '2019-11-29 12:17:07', 1),
+(7, 'abc', 'abc@gmail.com', NULL, '$2y$10$cgh.9G/BveIcUVbTOqPrv.WEEK2xcRY65aB4ZW8pyU74ZN93vYIiW', NULL, '2019-12-18 16:07:24', '2019-12-18 16:07:24', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

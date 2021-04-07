@@ -63,16 +63,19 @@ Route::group(['middleware' => 'web', 'namespace' => 'Controllers'], function () 
 });
 
 Route::middleware(['web', 'auth'])->group(function () {
-    Route::post('search-users', 'UsersManagementController@search')->name('search-users');
-    Route::post('users', 'UsersManagementController@store')->name('users.store');
-    Route::get('users', 'UsersManagementController@index')->name('users');
-    Route::get('users/create', 'UsersManagementController@create')->name('users.create');
-    Route::get('users/{user}', 'UsersManagementController@show')->name('users.show');
-    Route::get('users/{user}', 'UsersManagementController@show')->name('users.show');
-    Route::delete('users/{user}', 'UsersManagementController@destroy')->name('users.destroy');
-    Route::patch('users/{user}', 'UsersManagementController@update')->name('users.update');
-    Route::get('users/{user}/edit', 'UsersManagementController@edit')->name('users.edit');
+    Route::post('search-users', 'UsersManagementController@search')->name('search-users')->middleware('admin');
+    Route::post('users', 'UsersManagementController@store')->name('users.store')->middleware('admin');
+    Route::get('users', 'UsersManagementController@index')->name('users')->middleware('admin');
+    Route::get('users/create', 'UsersManagementController@create')->name('users.create')->middleware('admin');
+    Route::get('users/{user}', 'UsersManagementController@show')->name('users.show')->middleware('admin');
+    Route::get('users/{user}', 'UsersManagementController@show')->name('users.show')->middleware('admin');
+    Route::delete('users/{user}', 'UsersManagementController@destroy')->name('users.destroy')->middleware('admin');
+    Route::patch('users/{user}', 'UsersManagementController@update')->name('users.update')->middleware('admin');
+    Route::get('users/{user}/edit', 'UsersManagementController@edit')->name('users.edit')->middleware('admin');
 });
+
+Route::resource('/categorymanagement', 'CategoryController')->middleware('admin');
+
 
 Route::post('dat-hang',[
     'as' => 'dathang',

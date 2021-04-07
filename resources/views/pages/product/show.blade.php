@@ -1,5 +1,13 @@
 @extends('layouts.default')
-
+<?php 
+if(!isset($_COOKIE['viewCount'])){
+    setcookie('viewCount',1,time()+2592000);
+}
+else{
+    $currentCount=++$_COOKIE['viewCount'];
+    setcookie('viewCount',$currentCount,time()+2592000);
+}
+?>
 @section('content')
 <style>
     .muahang .btn:hover{
@@ -58,6 +66,15 @@
                                 </form>
                               </div>
                         </div>
+                        Luot Xem:
+                        <?php 
+                            if(isset($_COOKIE['viewCount'])){
+                                echo $_COOKIE['viewCount'];
+                            }else{
+                                echo 1;
+
+                            }
+                        ?>
                     </div>
                 </div><br><br>
                 <div class="comment">

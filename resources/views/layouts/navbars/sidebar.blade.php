@@ -29,7 +29,7 @@
           <ul class="nav">
             <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
               <a class="nav-link" href="{{url('/')}}/users1">
-                <span class="sidebar-mini"> MP </span>
+                <span class="sidebar-mini"> YP </span>
                 <span class="sidebar-normal">{{ __('Your Profile') }} </span>
               </a>
             </li>
@@ -53,7 +53,7 @@
           <ul class="nav">
             <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
               <a class="nav-link" href="{{route('users.create')}}">
-                <span class="sidebar-mini"> MP </span>
+                <span class="sidebar-mini"> CNU </span>
                 <span class="sidebar-normal">{{ __('Create New User') }} </span>
               </a>
             </li>
@@ -87,6 +87,25 @@
                 <span class="sidebar-normal"> {{ __('Product Management') }} </span>
               </a>
             </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item {{ ($activePage == 'product' || $activePage == 'product-management') ? ' active' : '' }}">
+        <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
+          <i><img style="width:25px" src="{{ asset('assets/img/laravel.svg') }}"></i>
+          <p>{{ __('Categories') }}
+            <b class="caret"></b>
+          </p>
+        </a>
+        <div class="collapse show" id="laravelExample">
+          <ul class="nav">
+            <li class="nav-item{{ $activePage == 'product' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('category.create') }}">
+                <span class="sidebar-mini"> CN </span>
+                <span class="sidebar-normal">{{ __('Create New') }} </span>
+              </a>
+            </li>
+            
           </ul>
         </div>
       </li>
